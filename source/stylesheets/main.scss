@@ -4,10 +4,15 @@
     @include box-sizing(border-box);
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
 	background-color: #dddddd;
     font-size: medium; // 16px - 12pt
-    @include column(12);
+    height:100%;
 }
 
 .logo-background {
@@ -80,6 +85,5 @@ body {
         }
     }
 }
-
 
 @include logo-styles

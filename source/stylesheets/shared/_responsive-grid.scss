@@ -9,7 +9,7 @@ and (max-width: 519px) {
             @include column(9);
             
             li {
-                margin: 0 7%;
+                margin: 0 5%;
             }
         }
     }
@@ -42,7 +42,7 @@ and (max-width: 959px) {
 
     .main-nav {
         .links {
-            @include column(8);
+            @include column(7);
             
             li {
                 margin: 0 10%;
@@ -59,7 +59,7 @@ and (min-width: 960px) {
   
   .main-nav {
       .links {
-          @include column(8);
+          @include column(7);
           
           li {
               margin: 0 10%;
