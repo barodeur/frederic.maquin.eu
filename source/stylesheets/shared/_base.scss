@@ -1,0 +1,58 @@
+@import "libs/normalize";
+@import "libs/grid";
+
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+@import "webfonts/webfonts";
+
+// Variables
+
+$logo-background-color: white;
+$logo-background-opacity: 0.6;
+
+$logo-chair-color: white;
+$logo-chair-opacity: 0;
+
+$logo-fm-color: #a7a7a7;
+$logo-fm-opacity: 0.5;
+
+// Mixins
+
+@mixin basic-opacity-transition {
+    @include transition-property(opacity);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-in);
+}
+
+@mixin logo-color-and-opacity($color, $opacity) {
+    @include opacity($opacity);
+    color: $color;
+    
+    @include basic-opacity-transition;
+    
+    &:hover {
+        @include opacity($opacity + ((1 - $opacity)/1.1));
+        color: $color;
+        
+        @include basic-opacity-transition;
+    }
+}
+
+@mixin logo-styles {
+    .logo-background {
+        @include logo-color-and-opacity($logo-background-color,
+                                        $logo-background-opacity);
+    }
+
+    .logo-chair {
+        @include logo-color-and-opacity($logo-chair-color,
+                                        $logo-chair-opacity);
+    }
+
+    .logo-fm {
+        @include logo-color-and-opacity($logo-fm-color,
+                                        $logo-fm-opacity);
+    }
+}

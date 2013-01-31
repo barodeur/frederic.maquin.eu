@@ -1,0 +1,15 @@
+.index {
+    $logo-background-color: white;
+    $logo-background-opacity: 0.6;
+
+    $logo-chair-color: white;
+    $logo-chair-opacity: 0;
+
+    $logo-fm-color: #a7a7a7;
+    $logo-fm-opacity: 0.5;
+    
+	background: url(../../images/snow-chair.jpg) no-repeat center center fixed;
+	@include background-size(cover);
+    
+    @include logo-styles
+}

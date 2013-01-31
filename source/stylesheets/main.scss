@@ -1,0 +1,85 @@
+// Base CSS
+
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+	background-color: #dddddd;
+    font-size: medium; // 16px - 12pt
+    @include column(12);
+}
+
+.logo-background {
+    display:block;
+    height: 5.1em;    
+}
+
+.logo-chair::before, .logo-fm::before {
+	content: attr(data-icon);
+	font: 5em 'FM Logo Regular';
+	font-weight: normal;
+	font-style: normal;
+    line-height:1.1;
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+.logo-background::before {
+	content: attr(data-icon);
+	font: 5em 'FM Logo Regular';
+	font-weight: normal;
+	font-style: normal;
+    line-height:1.1;
+    display:block;
+}
+
+.main-nav {
+    margin-top: 1em;
+    margin-left: 0.5em;
+    
+    .logo {
+        @include column(3);
+    
+        a {
+            display: inline-block;
+    	    position: relative;
+            text-decoration: none;
+        }
+    }
+    
+    .links {
+        font: 1.5em 'League Gothic Regular';
+        text-transform: uppercase;
+        display: block;
+    
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.2em 0;
+        }
+    
+        li {
+            display: inline;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #a7a7a7;
+            padding: 0.1em;
+            @include opacity(0.7);
+            
+            &:hover {
+                @include opacity(1);
+                
+                @include transition-property(opacity);
+                @include transition-duration(0.3s);
+                @include transition-timing-function(ease-in);
+            }
+        }
+    }
+}
+
+
+@include logo-styles
