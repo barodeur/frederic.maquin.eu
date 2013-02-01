@@ -2,41 +2,70 @@
 
 .blog_2011_10_24_the-mess-of-using-slides {
     
-    $logo-background-color: black;
+    background-color: #eeddcc;
+    color: #221100;
+    
+    a {
+        color: #bb4411;
+        
+        &:visited {
+            color: #662200;
+        }
+    }
+    
+    $logo-background-color: #221100;
     $logo-background-opacity: 0.4;
 
-    $logo-chair-color: white;
+    $logo-chair-color: #eeddcc;
     $logo-chair-opacity: 0;
 
-    $logo-fm-color: white;
+    $logo-fm-color: #eeddcc;
     $logo-fm-opacity: 0.3;
     
     @include logo-styles;
     
     #top-background {
-    	background: url(../../images/conference-chair.jpg) no-repeat center center;
+    	background: url(../../images/chair-auditorium.jpg) no-repeat center center;
     	@include background-size(cover);
     }
     
     .main-nav {
+        @include opacity(0.5);
+        
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease-in);
+        
         .links {
             a {
-                color: white;
-                @include opacity(0.8);
+                color: $logo-background-color;
             
                 &:hover {
                     @include opacity(1);
+                    color:$logo-fm-color;
                 
-                    @include transition-property(opacity);
+                    @include transition-property(opacity, color);
                     @include transition-duration(0.3s);
                     @include transition-timing-function(ease-in);
                 }
             }
         }
+        
+        &:hover {
+            opacity: 1;
+            
+            @include transition-property(opacity);
+            @include transition-duration(0.3s);
+            @include transition-timing-function(ease-in);
+        }
     }
 
     article {
-
+        font: 1.2em 'Fanwood Regular';
+    
+        p {
+            text-align: justify;
+        }
     }
     
 }
