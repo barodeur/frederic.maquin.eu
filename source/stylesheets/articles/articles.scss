@@ -1,1 +1,42 @@
 @import 'home';
+
+.blog_2011_10_24_the-mess-of-using-slides {
+    
+    $logo-background-color: black;
+    $logo-background-opacity: 0.4;
+
+    $logo-chair-color: white;
+    $logo-chair-opacity: 0;
+
+    $logo-fm-color: white;
+    $logo-fm-opacity: 0.3;
+    
+    @include logo-styles;
+    
+    #top-background {
+    	background: url(../../images/conference-chair.jpg) no-repeat center center;
+    	@include background-size(cover);
+    }
+    
+    .main-nav {
+        .links {
+            a {
+                color: white;
+                @include opacity(0.8);
+            
+                &:hover {
+                    @include opacity(1);
+                
+                    @include transition-property(opacity);
+                    @include transition-duration(0.3s);
+                    @include transition-timing-function(ease-in);
+                }
+            }
+        }
+    }
+
+    article {
+
+    }
+    
+}

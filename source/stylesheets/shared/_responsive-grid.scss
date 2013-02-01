@@ -6,7 +6,8 @@ and (max-width: 519px) {
     
     .main-nav {
         .links {
-            @include column(9);
+            @include column(7);
+            @include pull(2);
             
             li {
                 margin: 0 5%;
@@ -24,10 +25,11 @@ and (max-width: 759px) {
     
     .main-nav {
         .links {
-            @include column(8);
+            @include column(7);
+            @include pull(2);
             
             li {
-                margin: 0 9%;
+                margin: 0 7%;
             }
         }
     }
@@ -43,6 +45,7 @@ and (max-width: 959px) {
     .main-nav {
         .links {
             @include column(7);
+            @include pull(2);
             
             li {
                 margin: 0 10%;
@@ -53,17 +56,18 @@ and (max-width: 959px) {
  
 @media only screen 
 and (min-width: 960px) {
-  body {
+    body {
       font-size: 1.5em;
-  }
+    }
   
-  .main-nav {
+    .main-nav {
       .links {
           @include column(7);
+          @include pull(2);
           
           li {
               margin: 0 10%;
           }
       }
-  }
+    }
 }

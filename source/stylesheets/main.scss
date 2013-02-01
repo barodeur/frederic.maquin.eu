@@ -41,10 +41,10 @@ body {
 }
 
 .main-nav {
-    margin-top: 1em;
     margin-left: 0.5em;
     
     .logo {
+        padding-top: 1em;
         @include column(3);
     
         a {
@@ -55,6 +55,7 @@ body {
     }
     
     .links {
+        padding-top: 0.8em;
         font: 1.5em 'League Gothic Regular';
         text-transform: uppercase;
         display: block;
@@ -83,6 +84,38 @@ body {
                 @include transition-timing-function(ease-in);
             }
         }
+    }
+}
+
+#top-background {
+    min-height:14em;
+    height:20em;
+	background: url(../../images/snow-chair.jpg) no-repeat center center;
+	@include background-size(cover);
+    
+    h1 {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3.3em;
+        padding-top:2.8em;
+        margin-top:0;
+        
+        color: rgba(255,255,255, 0.97);
+        @include text-shadow(rgba(0,0,0,0.7) 0 0 15px,
+                             rgba(0,0,0,0.8) 0 0 9px,
+                             rgba(0,0,0,0.9) 0 0 3px);
+    }
+}
+
+article {
+    @include column(6);
+    @include push(3);
+    
+    font: 1.2em 'Fanwood Regular';
+    
+    p {
+        text-align: justify;
     }
 }
 

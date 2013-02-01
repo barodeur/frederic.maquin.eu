@@ -10,6 +10,8 @@
         = data.page.title || "Frédéric Maquin"
     %meta{:content => "", :name => "description"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:800', rel: 'stylesheet', type: 'text/css'}
 
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
@@ -26,13 +28,26 @@
                     %i.logo-fm{"data-icon" => "F", "aria-hidden" => "true"}
             
             .links
-                %ul
-                    %li
-                        %a{href: "#"} Blog
-                    %li
-                        %a{href: "#"} About Me
-                    %li
-                        %a{href: "#"} Whatever
+                - if is_blog_article? or data.page.in_blog
+                    %ul
+                        %li
+                            %a{href: "/blog/archive/"} Archives
+                        %li
+                            %a{href: "/blog/search"} Search
+                        %li
+                            %a{href: "/about-me/"} About Me
+                - else
+                    %ul
+                        %li
+                            %a{href: "/about-me/"} About Me
+                        %li
+                            %a{href: "/projects/"} Projects
+                        %li
+                            %a{href: "/blog/"} Blog
     = yield
+    - if data.page.photo_credit
+        %footer
+            Photo Credit:
+            = data.page.photo_credit
     = javascript_include_tag  "all"
 </html>

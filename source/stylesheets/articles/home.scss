@@ -13,3 +13,20 @@
     
     @include logo-styles
 }
+
+footer {
+    background-color: rgba(0.1, 0.1, 0.1, 0.5);
+    padding: 0.4em;
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+    
+    font: 0.4em 'Junction Regular';
+    color: white;
+    text-transform:uppercase;
+    
+    a {
+        color: white;
+        text-decoration:underline;
+    }
+}
