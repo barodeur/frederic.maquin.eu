@@ -18,6 +18,8 @@ $logo-chair-opacity: 0;
 $logo-fm-color: #a7a7a7;
 $logo-fm-opacity: 0.5;
 
+$one_em: 16px;
+
 // Mixins
 
 @mixin article-childs-width ($width, $margin:auto) {

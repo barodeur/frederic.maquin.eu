@@ -12,3 +12,8 @@ jQuery ->
         $(".logo-background").toggleClass "logo-background-hovered"
     )
     
+    $(".menu-mini").click (->
+        console.log("toto")
+        $(".content-wrapper").toggleClass "in-viewport"
+    )
+    

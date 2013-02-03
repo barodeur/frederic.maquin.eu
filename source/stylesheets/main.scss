@@ -38,51 +38,16 @@ body {
     line-height:1.1;
     display:block;
 }
-
-.main-nav {
     
-    .logo {
-        padding-top: 1em;
-        @include column(3);
-        margin-left: 0.5em;
+.logo {
+    padding-top: 1em;
+    @include column(3);
+    margin-left: 0.5em;
     
-        a {
-            display: inline-block;
-    	    position: relative;
-            text-decoration: none;
-        }
-    }
-    
-    .links {
-        padding-top: 0.9em;
-        font: 1.5em 'League Gothic Regular';
-        text-transform: uppercase;
-        display: block;
-    
-        ul {
-            list-style: none;
-            padding: 0;
-            display: inline-block;
-        }
-    
-        li {
-            display: inline;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #a7a7a7;
-            padding: 0.1em;
-            @include opacity(0.7);
-            
-            &:hover {
-                @include opacity(1);
-                
-                @include transition-property(opacity);
-                @include transition-duration(0.3s);
-                @include transition-timing-function(ease-in);
-            }
-        }
+    a {
+        display: inline-block;
+	    position: relative;
+        text-decoration: none;
     }
 }
 

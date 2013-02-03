@@ -19,15 +19,17 @@
 %body{:class => page_classes}
     /[if lt IE 7]
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    %header
-        %nav.main-nav
+    .content-wrapper
+        %header
             .logo
                 %a{href: "#"}
                     %i.logo-background{"data-icon" => "B", "aria-hidden" => "true"}
                     %i.logo-chair{"data-icon" => "M", "aria-hidden" => "true"}
                     %i.logo-fm{"data-icon" => "F", "aria-hidden" => "true"}
-            
-            .links
+                
+            %a.menu-mini{href: "#"}
+    
+            %nav.main-nav
                 - if is_blog_article? or data.page.in_blog
                     %ul
                         %li
@@ -44,10 +46,10 @@
                             %a{href: "/projects/"} Projects
                         %li
                             %a{href: "/blog/"} Blog
-    = yield
-    - if data.page.photo_credit
-        %footer
-            Photo Credit:
-            = data.page.photo_credit
-    = javascript_include_tag  "all"
+        = yield
+        - if data.page.photo_credit
+            %footer
+                Photo Credit:
+                = data.page.photo_credit
+        = javascript_include_tag  "all"
 </html>
