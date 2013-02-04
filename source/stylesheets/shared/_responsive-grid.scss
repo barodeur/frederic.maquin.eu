@@ -43,20 +43,33 @@
         right:0;
         top:0;
         @include transform(translate3d(-1.5em, 1em, 0px));
+        width: (1.4em + 0.05em);
+        height: (1em + 0.05em);
+        
+        @include border-radius(0.3em);
+        border: 0.05em solid rgba(0, 0, 0, 0.5);
         
         font-size:2em;
         
+        @include box-shadow(rgba(255, 255, 255, 0.8) 0 0.05em 0em 0,
+                            rgba(255, 255, 255, 0.8) 0 0.05em 0em 0 inset);
+
         &:before {
           content: "";
           position: absolute;
-          top: 0;
-          left: 0;
+          top: 0.2em;
+          left: 0.3em;
           width: 0.8em;
           height: 0.125em;
-          border-top: 0.375em double rgba(0, 0, 0, 0.5);
-          border-bottom: 0.125em solid rgba(0, 0, 0, 0.5);
+          border-top: 0.375em double rgba(0, 0, 0, 1);
+          border-bottom: 0.125em solid rgba(0, 0, 0, 1);
+        }
+        
+        &:active {
+            @include box-shadow(rgba(0, 0, 0, 0.5) 0 0 0.1em 0.1em inset);
         }
     }
+    
     
     $viewport-menu-offset:10.2em;
     $main-nav-font-size:1.5em;
