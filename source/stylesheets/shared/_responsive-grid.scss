@@ -11,9 +11,7 @@
     }
     
     .main-nav {
-        font-family:'League Gothic Regular';
         font-size: 1.5em;
-        text-transform: uppercase;
     }
     
     article {
@@ -42,7 +40,7 @@
         position: absolute;
         right:0;
         top:0;
-        @include transform(translate3d(-1.5em, 1em, 0px));
+        @include transform(translate3d(-1.5em, 2.1em, 0px));
         width: (1.4em + 0.05em);
         height: (1em + 0.05em);
         

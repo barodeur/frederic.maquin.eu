@@ -87,3 +87,88 @@
     }
     
 }
+
+.blog_2013_02_02_no-images {
+    
+    // Color theme
+    $at-dark-blue: rgba(35, 43, 43, 1);
+    $at-bright-red: rgba(220, 61, 36, 1);
+    $at-dark-yellow: rgba(227, 174, 87, 1);
+    $at-white: white;
+    
+    // HTML entities colors
+    $text: $at-white;
+    $title: $at-white;
+    $anchor: $at-bright-red;
+    $anchor-visited: darken($at-bright-red, 20%);
+    $menu-border: rgba(102, 34, 0, 0.3);
+    $background-color: $at-dark-blue;
+    $main-nav: $at-dark-yellow;
+    $mini-button: $at-dark-yellow;
+    
+    background-color: $background-color;
+    color: $text;
+    
+    a {
+        color: $anchor;
+        
+        &:visited {
+            color: $anchor-visited;
+        }
+    }
+    
+    $logo-background-color: $at-dark-yellow;
+    $logo-background-opacity: 0.8;
+
+    $logo-chair-color: $at-bright-red;
+    $logo-chair-opacity: 0;
+
+    $logo-fm-color: $at-bright-red;
+    $logo-fm-opacity: 0.8;
+    
+    @include logo-styles;
+    
+    #top-background {
+    	background: none;
+    
+        h1 {
+            color:$title;
+        }
+    }
+    
+    .main-nav {
+        a {
+            color: $main-nav;
+            
+            &:hover {
+                color:darken($main-nav, 20%);
+            }
+        }
+    }
+    
+    .menu-mini {
+        border-color: $mini-button;
+        
+        $mini-button-external-shadow: darken($mini-button, 70%);
+        
+        @include box-shadow(none);
+
+        &:before {
+          border-color: $mini-button;
+        }
+    }
+    
+    @media screen and (max-width: (599px/$one_em) + 0em) {
+        ul {
+            background-color:$at-dark-yellow;
+            li {
+                border-color:$menu-border;
+            }
+            
+            a {
+                color:$at-bright-red;
+            }
+        }
+    }
+    
+}
