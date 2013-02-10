@@ -1,17 +1,35 @@
 .index {
+
+    // HTML entities colors
+    $text-color: white;
+    $title-color: white;
+    
+    $main-nav-color: rgb(167, 167, 167);
+
+    $main-nav-active-color: lighten($main-nav-color, 10%);
+    $main-nav-hover-color: darken($main-nav-color, 10%);
+    
+    // Logo
     $logo-background-color: white;
     $logo-background-opacity: 0.6;
 
-    $logo-chair-color: white;
-    $logo-chair-opacity: 0;
-
-    $logo-fm-color: #a7a7a7;
+    $logo-fm-color: rgb(167, 167, 167);
     $logo-fm-opacity: 0.5;
+
+    $logo-chair-color: lighten($logo-fm-color, 20%);
+    $logo-chair-opacity: 0;
     
-	background: url(../../images/snow-chair.jpg) no-repeat center center fixed;
-	@include background-size(cover);
+    // Fonts
     
-    @include logo-styles
+    // Shadows
+    $nav-shadow: none;
+    
+    @include logo-styles;
+    @include specific-article-theme-template;
+    
+    background: url(../../images/snow-chair.jpg) no-repeat center center fixed;
+    @include background-size(cover);
+    
 }
 
 footer {

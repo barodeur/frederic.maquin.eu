@@ -1,0 +1,44 @@
+.blog_2011_10_24_the-mess-of-using-slides, .blog_2011_04_25_the-pain-of-finding-a-text-editor-that-suits-you {
+    
+    // Color theme
+    $at-dark-blue: rgba(35, 43, 43, 1);
+    $at-bright-red: rgba(220, 61, 36, 1);
+    $at-dark-yellow: rgba(227, 174, 87, 1);
+    $at-white: white;
+    
+    // HTML entities colors
+    $text-color: rgb(23, 4, 44);
+    $title-color: #FFFFD5;
+    $link-color: #B36A76;
+    $link-visited-color: darken($link-color, 20%);
+    $background-color:rgba(238, 221, 204, 1);
+    $main-nav-color: #FFFFD5;
+    $main-nav-active-color: lighten($background-color, 10%);
+    $main-nav-hover-color: darken($main-nav-color, 10%);
+    
+    // Logo
+    $logo-background-color: rgb(76, 6, 60);
+    $logo-background-opacity: 0.9;
+
+    $logo-chair-color: rgb(150, 68, 79);
+    $logo-chair-opacity: 0.3;
+
+    $logo-fm-color: rgb(225, 167, 115);
+    $logo-fm-opacity: 0.9;
+    
+    // Fonts
+    $text-font: 'Fanwood Regular';
+    $title-font: 'Open Sans';
+    
+    // Shadows
+    $title-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
+    $nav-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
+    $header-shadow: inset 0px -4px 0.45em 0.02em rgba(0,0,0,0.5);
+    
+    // Image
+    $background-image:url(../../images/Chair-FOV.jpg);
+    
+    @include logo-styles;
+    @include specific-article-theme-template;
+
+}

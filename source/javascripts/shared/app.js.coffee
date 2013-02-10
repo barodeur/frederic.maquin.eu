@@ -1,3 +1,4 @@
+
 jQuery ->
     $('article p').hyphenate('fr')
     

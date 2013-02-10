@@ -1,0 +1,44 @@
+.blog_2013_02_02_no-images {
+    
+    // Color theme
+    $at-dark-blue: rgba(35, 43, 43, 1);
+    $at-bright-red: rgba(220, 61, 36, 1);
+    $at-dark-yellow: rgba(227, 174, 87, 1);
+    $at-white: white;
+    
+    // HTML entities colors
+    $text-color: $at-white;
+    $title-color: $at-white;
+    $link-color: $at-bright-red;
+    $link-color-visited: darken($at-bright-red, 20%);
+    $background-color: $at-dark-blue;
+    $main-nav-color: $at-dark-yellow;
+    $main-nav-active-color: lighten($background-color, 10%);
+    $main-nav-hover-color: darken($main-nav-color, 10%);
+    
+    // Logo
+    $logo-background-color: $at-dark-yellow;
+    $logo-background-opacity: 0.9;
+
+    $logo-chair-color: darken($at-bright-red, 20%);
+    $logo-chair-opacity: 0;
+
+    $logo-fm-color: $at-bright-red;
+    $logo-fm-opacity: 0.9;
+    
+    // Fonts
+    $text-font: 'Fanwood Regular';
+    $title-font: 'Open Sans';
+    
+    // Shadows
+    $title-shadow: none;
+    $nav-shadow: none;
+    $header-shadow: none;
+    
+    // Image
+    $background-image:none;
+    
+    @include logo-styles;
+    @include specific-article-theme-template;
+    @include totally-flat;
+}

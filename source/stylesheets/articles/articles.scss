@@ -1,174 +1,117 @@
-@import 'home';
+// COLORS -------------------------------------------------
 
-.blog_2011_10_24_the-mess-of-using-slides {
+// HTML entities colors
+$text-color: white;
+$title-color: white;
+$link-color: rgba(220, 61, 36, 1);
+$link-visited-color: darken(rgba(220, 61, 36, 1), 20%);
+$background-color: rgba(35, 43, 43, 1);
+$main-nav-color: rgba(227, 174, 87, 1);
+$mini-button: rgba(227, 174, 87, 1);
+$main-nav-active-color: lighten($background-color, 10%);
+$main-nav-hover-color: darken($main-nav-color, 10%);
+$nav-pill-background-color:rgba(171, 192, 193, 0.4);
+$nav-pill-foreground-color:rgba(245, 245, 245, 0.4);
+
+$nav-pill-active-background-color:rgb(171, 192, 193);
+$nav-pill-active-foreground-color:rgb(245, 245, 245);
+
+$figure-background-color: rgba(0, 0, 0, 0.05);
     
-    $anchor-visited:rgba(102, 34, 0, 1);
-    $menu-border:rgba(102, 34, 0, 0.3);
+// Logo
+$logo-background-color: rgba(227, 174, 87, 1);
+$logo-background-opacity: 0.9;
+
+$logo-chair-color: darken(rgba(220, 61, 36, 1), 20%);
+$logo-chair-opacity: 0;
+
+$logo-fm-color: rgba(220, 61, 36, 1);
+$logo-fm-opacity: 0.9;
+
+// Fonts
+$text-font: 'Fanwood Regular';
+$title-font: 'Open Sans';
     
-    $background-color:rgba(238, 221, 204, 1);
-    
+// Shadows
+$title-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
+$nav-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
+$header-shadow: inset 0px -4px 0.45em 0.02em rgba(0,0,0,0.5);
+
+// Image
+$background-image:none;
+
+// -------------------------------------------------------
+
+@mixin specific-article-theme-template {
     background-color: $background-color;
-    color: #221100;
+    color: $text-color;
     
     a {
-        color: #bb4411;
+        color: $link-color;
         
         &:visited {
-            color: #662200;
+            color: $link-visited-color;
         }
     }
-    
-    $logo-background-color: #221100;
-    $logo-background-opacity: 0.4;
-
-    $logo-chair-color: #eeddcc;
-    $logo-chair-opacity: 0;
-
-    $logo-fm-color: #eeddcc;
-    $logo-fm-opacity: 0.3;
-    
-    @include logo-styles;
-    
-    #top-background {
-    	background: url(../../images/chair-auditorium.jpg) no-repeat center center;
-    	@include background-size(cover);
-    }
-    
-/*    .main-nav {
-        @include opacity(0.5);
-        
-        @include transition-property(opacity);
-        @include transition-duration(0.3s);
-        @include transition-timing-function(ease-in);
-        
-        .links {
-            a {
-                color: $logo-background-color;
-            
-                &:hover {
-                    @include opacity(1);
-                    color:$logo-fm-color;
-                
-                    @include transition-property(opacity, color);
-                    @include transition-duration(0.3s);
-                    @include transition-timing-function(ease-in);
-                }
-            }
-        }
-        
-        &:hover {
-            opacity: 1;
-            
-            @include transition-property(opacity);
-            @include transition-duration(0.3s);
-            @include transition-timing-function(ease-in);
-        }
-    }*/
 
     article {
-        font: 1.2em 'Fanwood Regular';
-    
-        p {
-            text-align: justify;
-        }
-    }
-    
-    @media screen and (max-width: (599px/$one_em) + 0em) {
-        ul {
-            background-color:$logo-background-color;
-            li {
-                border-color:$menu-border;
+        
+        font-family: $text-font, serif;
+        
+        header {
+        	background: $background-image no-repeat center center;
+        	@include background-size(cover);
+            
+            h1 {
+                font-family: $title-font, sans-serif;
+                text-transform: uppercase;
+                
+                color: $title-color;
+                
+                @include text-shadow($title-shadow);
             }
             
-            a {
-                color:$background-color;
-            }
+            @include box-shadow($header-shadow);
         }
-    }
-    
-}
-
-.blog_2013_02_02_no-images {
-    
-    // Color theme
-    $at-dark-blue: rgba(35, 43, 43, 1);
-    $at-bright-red: rgba(220, 61, 36, 1);
-    $at-dark-yellow: rgba(227, 174, 87, 1);
-    $at-white: white;
-    
-    // HTML entities colors
-    $text: $at-white;
-    $title: $at-white;
-    $anchor: $at-bright-red;
-    $anchor-visited: darken($at-bright-red, 20%);
-    $menu-border: rgba(102, 34, 0, 0.3);
-    $background-color: $at-dark-blue;
-    $main-nav: $at-dark-yellow;
-    $mini-button: $at-dark-yellow;
-    
-    background-color: $background-color;
-    color: $text;
-    
-    a {
-        color: $anchor;
         
-        &:visited {
-            color: $anchor-visited;
+        figure {
+            background-color: $figure-background-color;
         }
     }
     
-    $logo-background-color: $at-dark-yellow;
-    $logo-background-opacity: 0.8;
-
-    $logo-chair-color: $at-bright-red;
-    $logo-chair-opacity: 0;
-
-    $logo-fm-color: $at-bright-red;
-    $logo-fm-opacity: 0.8;
-    
-    @include logo-styles;
-    
-    #top-background {
-    	background: none;
-    
-        h1 {
-            color:$title;
-        }
-    }
-    
-    .main-nav {
+    .main-nav {        
         a {
-            color: $main-nav;
+            color: $main-nav-color;
+            @include text-shadow($nav-shadow);
             
             &:hover {
-                color:darken($main-nav, 20%);
+                color:$main-nav-hover-color;
             }
         }
     }
     
-    .menu-mini {
-        border-color: $mini-button;
-        
-        $mini-button-external-shadow: darken($mini-button, 70%);
-        
-        @include box-shadow(none);
-
-        &:before {
-          border-color: $mini-button;
-        }
-    }
-    
-    @media screen and (max-width: (599px/$one_em) + 0em) {
-        ul {
-            background-color:$at-dark-yellow;
-            li {
-                border-color:$menu-border;
-            }
+    .active {
+        a {
+            background-color:$nav-pill-background-color;
+            color:$nav-pill-foreground-color;
             
-            a {
-                color:$at-bright-red;
+            &:active {
+                background-color:$nav-pill-active-background-color;
+                color:$nav-pill-active-foreground-color;
             }
         }
     }
-    
 }
+
+@mixin totally-flat {
+    article {
+        header {
+            padding-bottom:0;
+        }
+    }
+}
+
+@import 'home';
+@import 'about-me';
+@import '2011-10-24-the-mess-of-using-slides';
+@import '2013-02-02-no-images';

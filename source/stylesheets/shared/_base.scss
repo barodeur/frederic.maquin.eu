@@ -7,8 +7,9 @@
 
 @import "webfonts/webfonts";
 
-// Variables
+$one_em: 16px;
 
+// Variables
 $logo-background-color: white;
 $logo-background-opacity: 0.6;
 
@@ -18,12 +19,10 @@ $logo-chair-opacity: 0;
 $logo-fm-color: #a7a7a7;
 $logo-fm-opacity: 0.5;
 
-$one_em: 16px;
-
 // Mixins
 
 @mixin article-childs-width ($width, $margin:auto) {
-    p, h1, h2, h3, h4, h5, h6 {
+    p, h1, h2, h3, h4, h5, h6, ul, ol, figure {
         width: $width;
         margin-left: $margin;
         margin-right: $margin;
@@ -37,7 +36,7 @@ $one_em: 16px;
 }
 
 @mixin opacity-hovered($color, $opacity) {
-    @include opacity($opacity + ((1 - $opacity)/3));
+    @include opacity(1);
     color: $color;
     
     @include basic-opacity-transition;
@@ -98,4 +97,8 @@ $one_em: 16px;
     .logo-fm {
         @include logo-opacity-mobile($logo-fm-opacity);
     }
+}
+
+@mixin hidden {
+    display:none;
 }

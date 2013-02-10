@@ -1,7 +1,8 @@
 - wrap_layout :layout do
-    #top-background
-        %h1
-            = data.page.title
     #content
         %article
-            = yield
+            %header
+                %h1
+                    = data.page.title
+            .content
+                = yield

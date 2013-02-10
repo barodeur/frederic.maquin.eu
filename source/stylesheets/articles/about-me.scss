@@ -1,0 +1,48 @@
+.about-me {
+    
+    // Color theme
+    $at-dark-blue: rgba(35, 43, 43, 1);
+    $at-bright-red: rgba(220, 61, 36, 1);
+    $at-dark-yellow: rgba(227, 174, 87, 1);
+    $at-white: white;
+    
+    // HTML entities colors
+    $text-color: white;
+    $title-color: white;
+    $link-color: #B36A76;
+    $link-visited-color: darken($link-color, 20%);
+    $background-color:rgba(230, 230, 230, 1);
+    $main-nav-color: rgb(167, 167, 167);
+    $main-nav-active-color: lighten($main-nav-color, 10%);
+    $main-nav-hover-color: darken($main-nav-color, 10%);
+    
+    $nav-pill-background-color:lighten(rgba($main-nav-color, 0.7), 15%);
+    $nav-pill-foreground-color:$main-nav-color;
+
+    $nav-pill-active-background-color:$main-nav-color;
+    $nav-pill-active-foreground-color:$background-color;
+    
+    // Logo
+    $logo-background-color: white;
+    $logo-background-opacity: 0.6;
+    
+    $logo-fm-color: rgb(167, 167, 167);
+    $logo-fm-opacity: 0.5;
+    
+    $logo-chair-color: lighten($logo-fm-color, 20%);
+    $logo-chair-opacity: 0;
+    
+    // Fonts
+    $text-font: 'Fanwood Regular';
+    $title-font: 'Open Sans';
+    
+    // Shadows
+    $title-shadow: none;
+    $nav-shadow: none;
+    $header-shadow: none;
+    
+    @include logo-styles;
+    @include specific-article-theme-template;
+    @include totally-flat;
+
+}
