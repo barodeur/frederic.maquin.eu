@@ -27,7 +27,7 @@
     @include logo-styles;
     @include specific-article-theme-template;
     
-    background: url(../../images/snow-chair.jpg) no-repeat center center fixed;
+    background: url(/images/snow-chair.jpg) no-repeat center center fixed;
     @include background-size(cover);
     
 }

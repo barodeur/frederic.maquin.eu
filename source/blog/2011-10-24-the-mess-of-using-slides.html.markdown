@@ -1,4 +1,5 @@
 ---
+lang: en
 title: The mess of using slides
 date: 2011-10-24
 tags: Presentation, Slides, "Technical Mumbo Jumbo"

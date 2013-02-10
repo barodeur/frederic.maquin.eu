@@ -5,10 +5,10 @@
 # Time.zone = "UTC"
 
 activate :blog do |blog|
-  blog.prefix = "blog"
-  # blog.permalink = ":year/:month/:day/:title.html"
-  # blog.sources = ":year-:month-:day-:title.html"
-  # blog.taglink = "tags/:tag.html"
+  # blog.prefix = "blog"
+  blog.permalink = ":lang/blog/:year/:month/:day/:title.html"
+  blog.sources = "blog/:year-:month-:day-:title.html"
+  # blog.taglink = ":lang/blog/tags/:tag.html"
   blog.layout = "blog_layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
@@ -83,6 +83,8 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 set :fonts_dir, css_dir + '/shared/webfonts/'
+
+activate :i18n, :mount_at_root => false
 
 activate :directory_indexes
 

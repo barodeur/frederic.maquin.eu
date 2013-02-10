@@ -1,0 +1,24 @@
+---
+title: Frédéric Maquin
+in_blog: true
+---
+
+- english_articles = blog.articles.map do |article|
+    - article if article.lang == 'en'
+- english_articles.compact!
+
+- french_articles = blog.articles.map do |article|
+    - article if article.lang == 'fr'
+- french_articles.compact!
+
+FR
+- french_articles.each do |article|
+    %a{href: article.url}
+        = article.title
+        
+EN
+- english_articles.each do |article|
+    %a{href: article.url}
+        = article.title
+
+= I18n.t(:hello)

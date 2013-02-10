@@ -2,6 +2,7 @@
 title: The pain of finding a text editor that suits you
 date: 2011-04-25
 tags: Java, Python, Ruby, "Technical Mumbo Jumbo", "Text Editor"
+lang: en
 ---
 
 ###Since the projects I'm working on are increasing size, I've been browsing all around the Internet to find _the_ text editor with programming features that really suits me.###

@@ -1,4 +1,4 @@
-.blog_2011_10_24_the-mess-of-using-slides, .blog_2011_04_25_the-pain-of-finding-a-text-editor-that-suits-you {
+.en_blog_2011_10_24_the-mess-of-using-slides, .en_blog_2011_04_25_the-pain-of-finding-a-text-editor-that-suits-you {
     
     // Color theme
     $at-dark-blue: rgba(35, 43, 43, 1);
@@ -36,7 +36,7 @@
     $header-shadow: inset 0px -4px 0.45em 0.02em rgba(0,0,0,0.5);
     
     // Image
-    $background-image:url(../../images/Chair-FOV.jpg);
+    $background-image:url(/images/Chair-FOV.jpg);
     
     @include logo-styles;
     @include specific-article-theme-template;
