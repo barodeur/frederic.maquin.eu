@@ -101,6 +101,20 @@ $background-image:none;
             }
         }
     }
+    
+    .language-bullet {
+        position:absolute;
+            
+        @include transition-property(transform);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease-in);
+        
+        color:$main-nav-color;
+    }
+    
+    .bullet-before-french, .bullet-before-english {
+        color: $main-nav-hover-color;
+    }
 }
 
 @mixin totally-flat {

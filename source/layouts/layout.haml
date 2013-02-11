@@ -11,7 +11,7 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     
-    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:800', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,800', rel: 'stylesheet', type: 'text/css'}
 
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
@@ -42,7 +42,20 @@
                         %a{href: "/projects/"} Blog
                     %li{class: ("active" if data.page.canonic_name == "projects")}
                         %a{href: "/blog/"} Projects
-    = yield
+            
+            - data_tooltip = ("This article is English-only." if data.page.lang)
+            
+            %div.language-chooser{class: "#{data.page.lang}_only"}
+                %span.english
+                    %a.choose-english{href: "/en/", "data-tooltip" => data_tooltip}
+                        English
+                %span.french
+                    %a.choose-french{href: "/fr/", "data-tooltip" => data_tooltip}
+                        Français
+                %span.language-bullet.bullet-english-default
+                    &#x25b6;
+
+    = yield    
     - if data.page.photo_credit
         %footer
             Photo Credit:

@@ -18,3 +18,15 @@ jQuery ->
         $(".content-wrapper").toggleClass "in-viewport"
     )
     
+    $(".choose-english").hover (->
+        $(".language-bullet").toggleClass "bullet-before-english"
+    )
+    
+    $(".choose-french").hover (->
+        $(".language-bullet").toggleClass "bullet-before-french"
+    )
+    
+    # $(".choose-french").hover (->
+    #     $(this).toggleClass "bullet-before-french"
+    # )
+    
