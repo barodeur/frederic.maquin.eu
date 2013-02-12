@@ -102,6 +102,53 @@
         
         @include article-childs-width(90%)
     }
+    
+    .home-content {
+        position:fixed;
+        width:100%;
+        margin-top:30%;
+        
+        font-size:1.1em;
+    }
+    
+    blockquote {
+        position:relative;
+        border-radius:0.4em;
+        
+        font-family:'Fanwood Regular';
+        
+        padding:0.4em;
+        width:90%;
+
+        margin-left:auto;
+        margin-right:auto;
+        
+        p {
+            padding:0;
+            margin:0 2.5em;
+            text-align:justify;
+        }
+        
+        &:before {
+            content:"\201C";
+            font-size: 5em;
+            position:absolute;
+            top:-0.2em;
+        }
+        
+        &:after {
+            content:"\201D";
+            font-size: 5em;
+            position:absolute;
+            bottom:-0.45em;
+            right:0.05em;
+        }
+    }
+    
+    .blockquote-footer {
+        margin-top:0.7em;
+        text-align:right;
+    }
 }
 
 @media screen and (min-width: (400px/$one_em) + 0em) {
@@ -212,13 +259,22 @@
         }
     }
     
-    .bullet-before-english, .bullet-english-default {
+    .bullet-english-default {
         @include transform(translate3d(-1.3em, -4em, 0));
     }
     
-    .bullet-before-french, .bullet-french-default {
+    .bullet-french-default {
         @include transform(translate3d(-1.3em, -1.8em, 0));
     }
+    
+    .bullet-before-english {
+        @include transform(translate3d(-1.3em, -4em, 0));
+    }
+    
+    .bullet-before-french {
+        @include transform(translate3d(-1.3em, -1.8em, 0));
+    }
+    
     
     .en_only, .fr_only {
         top:-0.1em;
@@ -295,6 +351,15 @@
             content:"\276E"
         }
     }
+    
+    .home-content {
+        margin-top:30%;
+        font-size:1.2em;
+    }
+    
+    blockquote {
+        width:80%;
+    }
 }
 
 @media screen and (min-width: (800px/$one_em) + 0em) {
@@ -311,6 +376,15 @@
             margin-left:-1em;
         }
     }
+    
+    .home-content {
+        margin-top:35%;
+        font-size:1.2em;
+    }
+    
+    blockquote {
+        width:80%;
+    }
 }
 
 @media screen and (min-width: (1030px/$one_em) + 0em) {
@@ -325,6 +399,7 @@
     article {
         @include article-childs-width(55%)
     }
+    
 }
 
 @media screen and (min-width: (1600px/$one_em) + 0em) {

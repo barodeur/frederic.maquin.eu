@@ -70,11 +70,12 @@ end
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def localized_link_to(name, resource_name)
+    link_to I18n.t(name), '/' + I18n.locale.to_s + '/' + I18n.t('paths.' + resource_name) + '.html'
+    
+  end
+end
 
 set :css_dir, 'stylesheets'
 

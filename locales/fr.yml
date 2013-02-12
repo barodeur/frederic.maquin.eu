@@ -1,3 +1,24 @@
 ---
 fr:
   hello: "Bonjour"
+  lang: "fr"
+  
+  # Layout
+  projects: "Projets"
+  blog: "Blog"
+  about_me: "À Propos"
+  photo_credit: "Crédit photo:"
+  
+  quote_shaw: "L’homme raisonnable s’adapte au monde&nbsp;; l’homme déraisonnable s’obstine à essayer d’adapter le monde à lui-même. Tout progrès dépend donc de l’homme déraisonnable."
+  
+  # Blog Layout
+  archives: "Archives"
+  search: "Recherche"
+  one_language_only: "Cet article n'est disponible qu'en français."
+  
+  paths:
+      about-me: "a-propos"
+      search: "blog/recherche"
+      archives: "blog/archives"
+      blog: "blog/index"
+      projects: "projets"

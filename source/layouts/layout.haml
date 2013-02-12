@@ -19,9 +19,17 @@
 %body{:class => page_classes}
     /[if lt IE 7]
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    
+    - if (I18n.t(:lang) == "en")
+        - language_bullet_default = "bullet-english-default"
+        - logo_path = "/en/"
+    - elsif (I18n.t(:lang) == "fr")
+        - language_bullet_default = "bullet-french-default"
+        - logo_path = "/fr/"
+    
     %header.master
         .logo
-            %a{href: "#"}
+            %a{href: logo_path}
                 %i.logo-background{"data-icon" => "B", "aria-hidden" => "true"}
                 %i.logo-chair{"data-icon" => "M", "aria-hidden" => "true"}
                 %i.logo-fm{"data-icon" => "F", "aria-hidden" => "true"}    
@@ -29,21 +37,21 @@
             - if is_blog_article? or data.page.in_blog
                 %ul
                     %li{class: ("active" if data.page.canonic_name == "archives")}
-                        %a{href: "/blog/archive/"} Archives
+                        = localized_link_to 'archives', 'archives'
                     %li{class: ("active" if data.page.canonic_name == "search")}
-                        %a{href: "/blog/search"} Search
+                        = localized_link_to 'search', 'search'
                     %li{class: ("active" if data.page.canonic_name == "about-me")}
-                        %a{href: "/about-me/"} About Me
+                        = localized_link_to 'about_me', 'about-me'
             - else
                 %ul              
                     %li{class: ("active" if data.page.canonic_name == "about-me")}
-                        %a{href: "/about-me/"} About Me
+                        = localized_link_to 'about_me', 'about-me'
                     %li{class: ("active" if is_blog_article? == "blog")}
-                        %a{href: "/projects/"} Blog
+                        = localized_link_to 'blog', 'blog'
                     %li{class: ("active" if data.page.canonic_name == "projects")}
-                        %a{href: "/blog/"} Projects
+                        = localized_link_to 'projects', 'projects'
             
-            - data_tooltip = ("This article is English-only." if data.page.lang)
+            - data_tooltip = (I18n.t(:one_language_only) if data.page.lang)
             
             %div.language-chooser{class: "#{data.page.lang}_only"}
                 %span.english
@@ -52,13 +60,13 @@
                 %span.french
                     %a.choose-french{href: "/fr/", "data-tooltip" => data_tooltip}
                         Français
-                %span.language-bullet.bullet-english-default
+                %span.language-bullet{class: language_bullet_default}
                     &#x25b6;
 
     = yield    
     - if data.page.photo_credit
-        %footer
-            Photo Credit:
+        %footer.overall
+            = I18n.t(:projects)
             = data.page.photo_credit
     = javascript_include_tag  "all"
 </html>

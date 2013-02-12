@@ -1,3 +1,24 @@
 ---
 en:
   hello: "Hello"
+  lang: "en"
+  
+  # Layout
+  projects: "Projects"
+  blog: "Blog"
+  about_me: "About Me"
+  photo_credit: "Photo credit:"
+  
+  quote_shaw: "The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man."
+  
+  # Blog Layout
+  archives: "Archives"
+  search: "Search"
+  one_language_only: "This article is English-only."
+  
+  paths:
+      about-me: "about-me"
+      search: "blog/search"
+      archives: "blog/archives"
+      blog: "blog/index"
+      projects: "projects"

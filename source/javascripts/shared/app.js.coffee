@@ -1,6 +1,6 @@
 
 jQuery ->
-    $('article p').hyphenate('fr')
+    $('article p, blockquote p').hyphenate('fr')
     
     $(".logo-fm, .logo-chair, .logo-background").hover (->
         console.log('toto')
@@ -25,8 +25,4 @@ jQuery ->
     $(".choose-french").hover (->
         $(".language-bullet").toggleClass "bullet-before-french"
     )
-    
-    # $(".choose-french").hover (->
-    #     $(this).toggleClass "bullet-before-french"
-    # )
     

@@ -1,4 +1,4 @@
-.index {
+.index, .en_index, .fr_index {
 
     // HTML entities colors
     $text-color: white;
@@ -30,21 +30,29 @@
     background: url(/images/snow-chair.jpg) no-repeat center center fixed;
     @include background-size(cover);
     
-}
-
-footer {
-    background-color: rgba(0.1, 0.1, 0.1, 0.5);
-    padding: 0.4em;
-    position: absolute;
-    bottom: 0;
-    right: 1%;
+/*    .master {
+        height:7em;
+    }*/
     
-    font: 0.4em 'Junction Regular';
-    color: white;
-    text-transform:uppercase;
+    blockquote {
+        color:#222222;
+        background-color: rgba($logo-background-color, $logo-background-opacity)
+    }
     
-    a {
-        color: white;
-        text-decoration:underline;
+    .overall {
+        background-color: rgba($logo-background-color, $logo-background-opacity);
+        padding: 0.4em;
+        position: absolute;
+        bottom: 0;
+        right: 1%;
+    
+        font: 0.7em 'Junction Regular';
+        color: #222222;
+        text-transform:uppercase;
+    
+        a {
+            color: #222222;
+            text-decoration:underline;
+        }
     }
 }
