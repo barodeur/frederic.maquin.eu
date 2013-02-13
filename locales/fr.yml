@@ -17,7 +17,7 @@ fr:
   one_language_only: "Cet article n'est disponible qu'en français."
   
   paths:
-      about-me: "a-propos"
+      about: "a-propos"
       search: "blog/recherche"
       archives: "blog/archives"
       blog: "blog/index"

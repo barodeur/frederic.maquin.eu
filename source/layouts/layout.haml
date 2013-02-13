@@ -40,12 +40,12 @@
                         = localized_link_to 'archives', 'archives'
                     %li{class: ("active" if data.page.canonic_name == "search")}
                         = localized_link_to 'search', 'search'
-                    %li{class: ("active" if data.page.canonic_name == "about-me")}
-                        = localized_link_to 'about_me', 'about-me'
+                    %li{class: ("active" if data.page.canonic_name == "about")}
+                        = localized_link_to 'about_me', 'about'
             - else
                 %ul              
-                    %li{class: ("active" if data.page.canonic_name == "about-me")}
-                        = localized_link_to 'about_me', 'about-me'
+                    %li{class: ("active" if data.page.canonic_name == "about")}
+                        = localized_link_to 'about_me', 'about'
                     %li{class: ("active" if is_blog_article? == "blog")}
                         = localized_link_to 'blog', 'blog'
                     %li{class: ("active" if data.page.canonic_name == "projects")}

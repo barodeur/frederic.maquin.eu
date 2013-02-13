@@ -17,7 +17,7 @@ en:
   one_language_only: "This article is English-only."
   
   paths:
-      about-me: "about-me"
+      about: "about"
       search: "blog/search"
       archives: "blog/archives"
       blog: "blog/index"
