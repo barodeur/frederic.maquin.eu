@@ -38,6 +38,13 @@
     // Image
     $background-image:url(/images/Chair-FOV.jpg);
     
+    // New stuff
+    $article-navigation-icon-color:#b0a497;
+    $article-navigation-text-color:$text-color;
+
+    $article-navigation-icon-hover-color:$article-navigation-icon-color;
+    $article-navigation-text-hover-color:$article-navigation-text-color;
+    
     @include logo-styles;
     @include specific-article-theme-template;
 

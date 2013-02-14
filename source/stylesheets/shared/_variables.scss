@@ -1,0 +1,50 @@
+// COLORS -------------------------------------------------
+
+// HTML entities colors
+$main-nav-color: rgb(117, 117, 117);
+$text-color: white;
+$title-color: darken($main-nav-color, 10%);
+$link-color: rgba(220, 61, 36, 1);
+$link-visited-color: darken(rgba(220, 61, 36, 1), 20%);
+$background-color: #dddddd;
+$mini-button: rgba(227, 174, 87, 1);
+$main-nav-active-color: lighten($main-nav-color, 10%);
+$main-nav-hover-color: darken($main-nav-color, 10%);
+$nav-pill-background-color:rgba($main-nav-active-color, 0.3);
+$nav-pill-foreground-color:darken($main-nav-active-color, 10%);
+
+$nav-pill-active-background-color:$nav-pill-background-color;
+$nav-pill-active-foreground-color:$nav-pill-foreground-color;
+
+$figure-background-color: rgba(0, 0, 0, 0.05);
+    
+// Logo
+$logo-background-color: rgb(240, 240, 240);
+$logo-background-opacity: 0.6;
+
+$logo-fm-color: $main-nav-color;
+$logo-fm-opacity: 0.5;
+
+$logo-chair-color: lighten($logo-fm-color, 20%);
+$logo-chair-opacity: 0.35;
+
+// Fonts
+$text-font: 'Fanwood Regular';
+$title-font: 'Open Sans';
+    
+// Shadows
+$title-shadow: none;
+$nav-shadow: none;
+$header-shadow: none;
+
+// Image
+$background-image:none;
+
+// New stuff
+$article-navigation-icon-color:#222222;
+$article-navigation-text-color:$text-color;
+$article-navigation-icon-text-opacity:0.2;
+
+$article-navigation-icon-hover-color:$article-navigation-icon-color;
+$article-navigation-text-hover-color:$article-navigation-text-color;
+$article-navigation-icon-text-hover-opacity:0.9;

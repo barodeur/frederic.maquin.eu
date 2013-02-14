@@ -12,11 +12,12 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     
     %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,800', rel: 'stylesheet', type: 'text/css'}
-
+    %link{href: 'http://fonts.googleapis.com/css?family=Maven+Pro', rel: 'stylesheet', type: 'text/css'}
+    
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
 
-%body{:class => page_classes}
+%body{:class => [page_classes, yield_content(:blog_index_dynamic_title)]}
     /[if lt IE 7]
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     
@@ -55,18 +56,15 @@
             
             %div.language-chooser{class: "#{data.page.lang}_only"}
                 %span.english
-                    %a.choose-english{href: "/en/", "data-tooltip" => data_tooltip}
+                    %a.choose-english{href: to_english(request.path), "data-tooltip" => data_tooltip}
                         English
                 %span.french
-                    %a.choose-french{href: "/fr/", "data-tooltip" => data_tooltip}
+                    %a.choose-french{href: to_french(request.path), "data-tooltip" => data_tooltip}
                         Français
                 %span.language-bullet{class: language_bullet_default}
                     &#x25b6;
 
-    = yield    
-    - if data.page.photo_credit
-        %footer.overall
-            = I18n.t(:projects)
-            = data.page.photo_credit
+    = yield
+    
     = javascript_include_tag  "all"
 </html>

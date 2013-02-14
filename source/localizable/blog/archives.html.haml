@@ -1,6 +1,8 @@
 ---
-title: Frédéric Maquin
+layout: out_blog_layout
+title: Archives
 in_blog: true
+canonic_name: archives
 ---
 
 - english_articles = blog.articles.map do |article|
@@ -11,14 +13,28 @@ in_blog: true
     - article if article.lang == 'fr'
 - french_articles.compact!
 
-FR
-- french_articles.each do |article|
-    %a{href: article.url}
-        = article.title
+%div.archive-list
+    %section.french-articles
+        %header
+            %h3 Articles written in French
+            
+        %ul.archive-article-list
+            - french_articles.each do |article|
+                %li
+                    %span.article-date
+                        = article.date.strftime('%d %B %Y')
+                    %a{href: article.url}
+                        = article.title
+    
+    %section.english-articles
+        %header
+            %h3 Articles written in English
         
-EN
-- english_articles.each do |article|
-    %a{href: article.url}
-        = article.title
-
-= I18n.t(:hello)
+        %ul.archive-article-list
+            - english_articles.each do |article|
+                %li
+                    %span.article-date
+                        = article.date.strftime('%d %B %Y')
+                    %a{href: article.url}
+                        = article.title
+                

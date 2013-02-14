@@ -73,8 +73,65 @@ end
 helpers do
   def localized_link_to(name, resource_name)
     link_to I18n.t(name), '/' + I18n.locale.to_s + '/' + I18n.t('paths.' + resource_name) + '.html'
-    
   end
+  
+  def to_language(url, lang)
+    url.gsub!('index.html', '')
+    url.gsub!(/en\/|fr\//, '')
+    
+    require 'uri'
+    
+    uri = URI.parse(request.path)
+    uri.fragment  = nil
+    uri.query = nil
+    
+    '/' + lang + '/' + uri.to_s
+  end
+  
+  def to_english(url)
+    to_language(url, 'en')
+  end
+  
+  def to_french(url)
+    to_language(url, 'fr')
+  end
+  
+  def previous_article_lang(current_article, lang)
+    blog.articles.find do |a|
+      begin
+        (a.date < current_article.date) and (a.data.lang == lang)
+      rescue NoMethodError
+        false
+      end
+    end
+  end
+  
+  def next_article_lang(current_article, lang)
+    blog.articles.reverse.find do |a|
+      begin
+        (a.date > current_article.date) and (a.data.lang == lang)
+      rescue NoMethodError
+        false
+      end
+    end
+  end
+  
+  def previous_article_en(current_article)
+    previous_article_lang(current_article, 'en')
+  end
+
+  def next_article_en(current_article)
+    next_article_lang(current_article, 'en')
+  end
+  
+  def previous_article_fr(current_article)
+    previous_article_lang(current_article, 'fr')
+  end
+
+  def next_article_fr(current_article)
+    next_article_lang(current_article, 'fr')
+  end
+  
 end
 
 set :css_dir, 'stylesheets'

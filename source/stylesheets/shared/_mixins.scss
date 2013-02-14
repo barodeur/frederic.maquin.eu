@@ -1,0 +1,81 @@
+@mixin article-childs-width ($width, $margin:auto) {
+    p, h1, h2, h3, h4, h5, h6, ul, ol, figure {
+        width: $width;
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+}
+
+@mixin basic-opacity-transition {
+    @include transition-property(opacity);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-in);
+}
+
+@mixin opacity-hovered($color, $opacity) {
+    @include opacity(1);
+    color: $color;
+    
+    @include basic-opacity-transition;
+}
+
+@mixin logo-color-and-opacity($color, $opacity) {
+    @include opacity($opacity);
+    color: $color;
+    
+    @include basic-opacity-transition;
+}
+
+@mixin logo-opacity-mobile($opacity) {
+    @include opacity($opacity + ((1 - $opacity)/3));
+}
+
+@mixin logo-styles {
+    .logo-background {
+        @include logo-color-and-opacity($logo-background-color,
+                                        $logo-background-opacity);
+    }
+
+    .logo-chair {
+        @include logo-color-and-opacity($logo-chair-color,
+                                        $logo-chair-opacity);
+    }
+
+    .logo-fm {
+        @include logo-color-and-opacity($logo-fm-color,
+                                        $logo-fm-opacity);
+    }
+    
+    .logo-background-hovered {
+        @include opacity-hovered($logo-background-color,
+                                 $logo-background-opacity);
+    }
+
+    .logo-chair-hovered {
+        @include opacity-hovered($logo-chair-color,
+                                 $logo-chair-opacity);
+    }
+    
+    .logo-fm-hovered {
+        @include opacity-hovered($logo-fm-color,
+                                 $logo-fm-opacity);
+    }
+}
+
+@mixin logo-styles-opacity {
+    .logo-background {
+        @include logo-opacity-mobile($logo-background-opacity);
+    }
+
+    .logo-chair {
+        @include logo-opacity-mobile($logo-chair-opacity);
+    }
+
+    .logo-fm {
+        @include logo-opacity-mobile($logo-fm-opacity);
+    }
+}
+
+@mixin hidden {
+    display:none;
+}

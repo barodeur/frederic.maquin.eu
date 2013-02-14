@@ -1,17 +1,34 @@
 - wrap_layout :layout do
-    #content
-        .navigation
-            %span.next-article
-                %a{href: "#"}
-                    Next Article
-            
-            %span.previous-article
-                %a{href: "#"}
-                    Previous Article
+    
+    - previous_article_object = previous_article_en(current_article)
+    - next_article_object = next_article_en(current_article)
+    
+    - if next_article_object
+        - puts next_article_object.url
+    - if previous_article_object
+        - puts previous_article_object.url
 
+    #content
         %article
-            %header
+            %header.article-title-header
                 %h1
                     = data.page.title
             .content
+                .navigation
+                    - if next_article_object
+                        %span.next-article
+                            %a{href: next_article_object.url}
+                                %span.article-navigation-tip-block
+                                    Next
+                                %span.article-navigation-tip-block
+                                    Article
+                                    
+                    - if previous_article_object
+                        %span.previous-article
+                            %a{href: previous_article_object.url}
+                                %span.article-navigation-tip-block
+                                    Previous
+                                %span.article-navigation-tip-block
+                                    Article
+                                
                 = yield

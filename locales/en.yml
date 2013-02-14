@@ -6,7 +6,7 @@ en:
   # Layout
   projects: "Projects"
   blog: "Blog"
-  about_me: "About Me"
+  about_me: "About"
   photo_credit: "Photo credit:"
   
   quote_shaw: "The reasonable man adapts himself to the world: the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man."
@@ -18,7 +18,6 @@ en:
   
   paths:
       about: "about"
-      search: "blog/search"
-      archives: "blog/archives"
-      blog: "blog/index"
+      search: "search"
+      archives: "archives"
       projects: "projects"

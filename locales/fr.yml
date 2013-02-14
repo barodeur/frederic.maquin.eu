@@ -18,7 +18,6 @@ fr:
   
   paths:
       about: "a-propos"
-      search: "blog/recherche"
-      archives: "blog/archives"
-      blog: "blog/index"
+      search: "recherche"
+      archives: "archives"
       projects: "projets"

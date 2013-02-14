@@ -9,96 +9,56 @@
 
 $one_em: 16px;
 
-// Variables
-$logo-background-color: white;
-$logo-background-opacity: 0.6;
+// Base CSS
 
-$logo-chair-color: white;
-$logo-chair-opacity: 0;
-
-$logo-fm-color: #a7a7a7;
-$logo-fm-opacity: 0.5;
-
-// Mixins
-
-@mixin article-childs-width ($width, $margin:auto) {
-    p, h1, h2, h3, h4, h5, h6, ul, ol, figure {
-        width: $width;
-        margin-left: $margin;
-        margin-right: $margin;
-    }
+* {
+    @include box-sizing(border-box);
 }
 
-@mixin basic-opacity-transition {
-    @include transition-property(opacity);
-    @include transition-duration(0.3s);
-    @include transition-timing-function(ease-in);
+html {
+    height: 100%;
+    width: 100%;
 }
 
-@mixin opacity-hovered($color, $opacity) {
-    @include opacity(1);
-    color: $color;
+body {
+    min-height:100%;
+    margin-bottom:3em;
+}
+
+.logo-background {
+    display: block;
+}
+
+.logo-chair::before, .logo-fm::before {
+	content: attr(data-icon);
+	font: 5em 'FM Logo Regular';
+	font-weight: normal;
+	font-style: normal;
+    line-height: 1.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:block;
+}
+
+.logo-background::before {
+	content: attr(data-icon);
+	font: 5em 'FM Logo Regular';
+	font-weight: normal;
+	font-style: normal;
+    line-height: 1.1;
+    display: block;
+}
     
-    @include basic-opacity-transition;
-}
-
-@mixin logo-color-and-opacity($color, $opacity) {
-    @include opacity($opacity);
-    color: $color;
-    
-    @include basic-opacity-transition;
-}
-
-@mixin logo-opacity-mobile($opacity) {
-    @include opacity($opacity + ((1 - $opacity)/3));
-}
-
-@mixin logo-styles {
-    .logo-background {
-        @include logo-color-and-opacity($logo-background-color,
-                                        $logo-background-opacity);
-    }
-
-    .logo-chair {
-        @include logo-color-and-opacity($logo-chair-color,
-                                        $logo-chair-opacity);
-    }
-
-    .logo-fm {
-        @include logo-color-and-opacity($logo-fm-color,
-                                        $logo-fm-opacity);
-    }
-    
-    .logo-background-hovered {
-        @include opacity-hovered($logo-background-color,
-                                 $logo-background-opacity);
-    }
-
-    .logo-chair-hovered {
-        @include opacity-hovered($logo-chair-color,
-                                 $logo-chair-opacity);
-    }
-    
-    .logo-fm-hovered {
-        @include opacity-hovered($logo-fm-color,
-                                 $logo-fm-opacity);
+.logo {
+    a {
+        position:relative;
+        display: inline-block;
+        text-decoration: none;
     }
 }
 
-@mixin logo-styles-opacity {
-    .logo-background {
-        @include logo-opacity-mobile($logo-background-opacity);
-    }
-
-    .logo-chair {
-        @include logo-opacity-mobile($logo-chair-opacity);
-    }
-
-    .logo-fm {
-        @include logo-opacity-mobile($logo-fm-opacity);
-    }
-}
-
-@mixin hidden {
-    display:none;
+.main-nav {
+    font-family:'League Gothic Regular';
+    text-transform: uppercase;
 }

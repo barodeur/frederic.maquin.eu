@@ -1,47 +1,3 @@
-// COLORS -------------------------------------------------
-
-// HTML entities colors
-$text-color: white;
-$title-color: white;
-$link-color: rgba(220, 61, 36, 1);
-$link-visited-color: darken(rgba(220, 61, 36, 1), 20%);
-$background-color: rgba(35, 43, 43, 1);
-$main-nav-color: rgba(227, 174, 87, 1);
-$mini-button: rgba(227, 174, 87, 1);
-$main-nav-active-color: lighten($background-color, 10%);
-$main-nav-hover-color: darken($main-nav-color, 10%);
-$nav-pill-background-color:rgba(171, 192, 193, 0.4);
-$nav-pill-foreground-color:rgba(245, 245, 245, 0.4);
-
-$nav-pill-active-background-color:rgb(171, 192, 193);
-$nav-pill-active-foreground-color:rgb(245, 245, 245);
-
-$figure-background-color: rgba(0, 0, 0, 0.05);
-    
-// Logo
-$logo-background-color: rgba(227, 174, 87, 1);
-$logo-background-opacity: 0.9;
-
-$logo-chair-color: darken(rgba(220, 61, 36, 1), 20%);
-$logo-chair-opacity: 0;
-
-$logo-fm-color: rgba(220, 61, 36, 1);
-$logo-fm-opacity: 0.9;
-
-// Fonts
-$text-font: 'Fanwood Regular';
-$title-font: 'Open Sans';
-    
-// Shadows
-$title-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
-$nav-shadow: 0 0 0.6em rgba($text-color, 0.4), 0 0 0.1em rgba($text-color, 0.7);
-$header-shadow: inset 0px -4px 0.45em 0.02em rgba(0,0,0,0.5);
-
-// Image
-$background-image:none;
-
-// -------------------------------------------------------
-
 @mixin specific-article-theme-template {
     background-color: $background-color;
     color: $text-color;
@@ -54,29 +10,29 @@ $background-image:none;
         }
     }
 
-    article {
+    article, .article-list {
         
         font-family: $text-font, serif;
-        
-        header {
-        	background: $background-image no-repeat center center;
-        	@include background-size(cover);
-            
-            h1 {
-                font-family: $title-font, sans-serif;
-                text-transform: uppercase;
-                
-                color: $title-color;
-                
-                @include text-shadow($title-shadow);
-            }
-            
-            @include box-shadow($header-shadow);
-        }
         
         figure {
             background-color: $figure-background-color;
         }
+    }
+    
+    .article-title-header, .archive-title-header {
+    	background: $background-image no-repeat center center;
+    	@include background-size(cover);
+            
+        h1 {
+            font-family: $title-font, sans-serif;
+            text-transform: uppercase;
+                
+            color: $title-color;
+                
+            @include text-shadow($title-shadow);
+        }
+            
+        @include box-shadow($header-shadow);
     }
     
     .main-nav {        
@@ -115,14 +71,37 @@ $background-image:none;
     .bullet-before-french, .bullet-before-english {
         color: $main-nav-hover-color;
     }
+    
+    .next-article, .previous-article {
+        a {
+            color:$article-navigation-text-color;
+            @include opacity($article-navigation-icon-text-opacity);
+            
+            &:hover {
+                color:$article-navigation-text-hover-color;
+                @include opacity($article-navigation-icon-text-hover-opacity);
+            }
+            
+            &:before {
+                color:$article-navigation-icon-color;
+            }
+            
+            &:before:hover {
+                color:$article-navigation-icon-hover-color;
+            }
+        }
+    }
 }
 
 @mixin totally-flat {
-    article {
-        header {
-            padding-bottom:0;
-        }
+    .article-title-header, .archive-title-header {
+        padding-bottom:0;
     }
+}
+
+body {
+    @include logo-styles;
+    @include specific-article-theme-template;
 }
 
 @import 'home';

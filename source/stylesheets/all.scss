@@ -1,4 +1,5 @@
 @import "shared/base";
-@import "main";
+@import "shared/variables";
+@import "shared/mixins";
 @import "articles/articles";
-@import "shared/responsive";
+@import "shared/main-responsive";

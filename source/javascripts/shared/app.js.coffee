@@ -26,3 +26,6 @@ jQuery ->
         $(".language-bullet").toggleClass "bullet-before-french"
     )
     
+    $('.navigation').waypoint('sticky', {
+        offset: '40%'
+    })

@@ -1,0 +1,8 @@
+- wrap_layout :layout do
+    #content
+        .archives
+            %header.archive-title-header
+                %h1
+                    = data.page.title
+            .content
+                = yield
