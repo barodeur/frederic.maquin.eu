@@ -2,13 +2,15 @@
 # Blog settings
 ###
 
+require 'active_support/all'
+
 # Time.zone = "UTC"
 
 activate :blog do |blog|
   # blog.prefix = "blog"
   blog.permalink = ":lang/blog/:year/:month/:day/:title.html"
   blog.sources = "blog/:year-:month-:day-:title.html"
-  # blog.taglink = ":lang/blog/tags/:tag.html"
+  blog.taglink = "/:lang/blog/tags/:tag.html"
   blog.layout = "blog_layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
@@ -17,7 +19,7 @@ activate :blog do |blog|
   # blog.day_link = ":year/:month/:day.html"
   # blog.default_extension = ".markdown"
 
-  # blog.tag_template = "tag.html"
+  blog.tag_template = "blog/tag.html"
   # blog.calendar_template = "calendar.html"
 
   # blog.paginate = true
@@ -119,7 +121,7 @@ helpers do
   def previous_article_en(current_article)
     previous_article_lang(current_article, 'en')
   end
-
+  
   def next_article_en(current_article)
     next_article_lang(current_article, 'en')
   end
@@ -130,6 +132,38 @@ helpers do
 
   def next_article_fr(current_article)
     next_article_lang(current_article, 'fr')
+  end
+  
+  def articles_ordered_by_month(articles)
+    
+    puts 1
+    puts articles
+    
+    if (articles != nil and articles.last != nil)
+      puts 2
+      puts articles
+      
+      first_days_of_months_until_now = (articles.last.date.prev_month.to_datetime..Time.zone.now.to_datetime).select {|d| d.day == 1}
+    
+      articles_ordered = {}
+    
+      first_days_of_months_until_now.each do |first_day_of_month|
+      
+        articles_in_month = []
+      
+        articles.each do |article|
+          month = (first_day_of_month..first_day_of_month.end_of_month)
+          if month.cover?(article.date.to_datetime)
+            articles_in_month.append(article)
+          end
+        end
+      
+        articles_ordered.merge!(first_day_of_month => articles_in_month)
+      end
+      return articles_ordered
+    else
+      articles
+    end
   end
   
 end

@@ -1,0 +1,45 @@
+.en_blog_archives_index,
+.fr_blog_archives_index,
+.en_blog_search_index,
+.fr_blog_search_index {
+    
+    .french-articles, .english-articles, .french-tags, .english-tags {
+        h3 {
+            color: $main-nav-color;
+            font-family: "Open Sans";
+        }
+    }
+    
+    .article-date {
+        border-radius: 0.35em;
+        background-color: rgba(darken($main-nav-color, 10%), 0.4);
+        padding: 0 0.3em;
+        font-family: "League Gothic Regular";
+        text-transform: uppercase;
+        text-align:center;
+        line-height:1;
+        vertical-align:middle;
+        
+        color:$background-color;
+        
+        display:inline-block;
+        padding:0.2em 0.5em;
+        margin-top:1em;
+    }
+    
+    .archive-article-list, .tags-list {
+        
+        list-style-type: none;
+        
+        a {
+            text-decoration:none;
+        }
+        
+        li {
+            margin:0em 0em;
+        }
+        
+        border-spacing: 0.4em 0.5em;
+    }
+
+}

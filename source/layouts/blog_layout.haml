@@ -7,11 +7,14 @@
         - puts next_article_object.url
     - if previous_article_object
         - puts previous_article_object.url
+    
+    - tags = current_article.tags.map do |tag|
+        - "<a href=\"" + tag_path(tag, current_article.lang) + "\">" + tag + "</a>"
 
     #content
         %article
             %header.article-title-header
-                %h1
+                %h1.article-title
                     = data.page.title
             .content
                 .navigation
@@ -32,3 +35,16 @@
                                     Article
                                 
                 = yield
+                
+                .post-info
+                    %p.publish-date
+                        %time{datetime: current_article.date.strftime('%Y-%m-%d'), pubdate: ""}
+                        - if I18n.locale == :en
+                            = I18n.l(current_article.date, format: "#{current_article.date.day.ordinalize} %B, %Y")
+                        - else
+                            = I18n.l(current_article.date, format: "%-d %B, %Y")
+                            
+                    .tags-section
+                        %h5 Tags
+                        %p.tags
+                            = tags.join(", ")

@@ -9,6 +9,14 @@
             color: $link-visited-color;
         }
     }
+    
+    .publish-date {
+        text-align:right;
+    }
+    
+    .tags-section, .tags-section h5, .tags {
+        text-align: center;
+    }
 
     article, .article-list {
         
@@ -106,5 +114,6 @@ body {
 
 @import 'home';
 @import 'about';
+@import 'archives';
 @import '2011-10-24-the-mess-of-using-slides';
 @import '2013-02-02-no-images';

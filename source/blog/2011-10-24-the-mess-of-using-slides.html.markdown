@@ -1,8 +1,8 @@
 ---
 lang: en
 title: The mess of using slides
-date: 2011-10-24
-tags: Presentation, Slides, "Technical Mumbo Jumbo"
+en_date: 2011-10-24
+en_tags: Presentation, Slides, Technical Mumbo Jumbo
 ---
 
 ###In academic training, we have little to no information on how to make slides.###

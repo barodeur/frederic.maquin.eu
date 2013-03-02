@@ -4,8 +4,20 @@ photo_credit: "<a href=\"http://www.flickr.com/photos/70117145@N05/8405110257/\"
 ---
 
 .home-content
-    %blockquote{cite: "George Bernard Shaw"}
-        %p
-            = I18n.t(:quote_shaw)
-        %footer.blockquote-footer
-            — George Bernard Shaw
+    %h1.greetings
+        %span.greetings-parts.my-name-is
+            = I18n.t(:hi_my_name_is)
+            %em Fred
+        %span.greetings-parts.developer
+            = I18n.t(:i_am_a_developer)
+        %span.greetings-parts.job
+            = I18n.t(:i_am_looking_for)
+            = "<em><a href=\"mailto:frederic@maquin.eu?subject=#{I18n.t(:job_proposal_subject)}\">#{I18n.t(:job)}</a></em>!"
+
+.footer.home-photo-credit
+    Photo Credit /
+    %a{href: "http://www.flickr.com/photos/70117145@N05/8405110257/"}
+        jrmllvr
+    \/
+    %a{href: "http://creativecommons.org/licenses/by-nc-sa/2.0/"}
+        CC BY-SA 2.0

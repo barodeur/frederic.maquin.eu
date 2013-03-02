@@ -1,7 +1,7 @@
 ---
 title: The pain of finding a text editor that suits you
 date: 2011-04-25
-tags: Java, Python, Ruby, "Technical Mumbo Jumbo", "Text Editor"
+en_tags: Technical Mumbo Jumbo, Text Editor
 lang: en 
 ---
 

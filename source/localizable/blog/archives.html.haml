@@ -7,34 +7,45 @@ canonic_name: archives
 
 - english_articles = blog.articles.map do |article|
     - article if article.lang == 'en'
-- english_articles.compact!
+- puts english_articles.compact
+- english_articles = articles_ordered_by_month(english_articles.compact)
+
+
+- puts english_articles
 
 - french_articles = blog.articles.map do |article|
     - article if article.lang == 'fr'
-- french_articles.compact!
+- french_articles = articles_ordered_by_month(french_articles.compact)
 
-%div.archive-list
+%div.all-language-archive-list
     %section.french-articles
-        %header
-            %h3 Articles written in French
+        - if french_articles
+            %header
+                %h3 Articles written in French
             
-        %ul.archive-article-list
-            - french_articles.each do |article|
-                %li
-                    %span.article-date
-                        = article.date.strftime('%d %B %Y')
-                    %a{href: article.url}
-                        = article.title
-    
+            %ul.archive-article-list
+                - french_articles.each do |date_key, article_by_month|
+                    - if article_by_month.present?
+                        %span.article-date
+                            = date_key.strftime('%B %Y')
+                        - article_by_month.each do |article|
+                            %li
+                            
+                                %a{href: article.url}
+                                    = article.title
+                                    
     %section.english-articles
-        %header
-            %h3 Articles written in English
+        - if english_articles        
+            %header
+                %h3 Articles written in English
         
-        %ul.archive-article-list
-            - english_articles.each do |article|
-                %li
-                    %span.article-date
-                        = article.date.strftime('%d %B %Y')
-                    %a{href: article.url}
-                        = article.title
+            %ul.archive-article-list
+                - english_articles.each do |date_key, article_by_month|
+                    - if article_by_month.present?
+                        %span.article-date
+                            = date_key.strftime('%B %Y')
+                        - article_by_month.each do |article|
+                            %li
+                                %a{href: article.url}
+                                    = article.title
                 

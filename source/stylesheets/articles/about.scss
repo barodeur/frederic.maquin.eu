@@ -8,7 +8,7 @@
     $at-white: white;
     
     // HTML entities colors
-    $text-color: white;
+    $text-color: #222;
     $title-color: white;
     $link-color: #B36A76;
     $link-visited-color: darken($link-color, 20%);
@@ -34,7 +34,7 @@
     $logo-chair-opacity: 0;
     
     // Fonts
-    $text-font: 'Fanwood Regular';
+    $text-font: 'Gentium Basic', serif;
     $title-font: 'Open Sans';
     
     // Shadows
@@ -78,8 +78,12 @@
     }
 
     .help {
-        @include column(7);
-        @include push(5);
+        @include column(8);
+        @include push(2);
+        
+        color: $text-color;
+        font-family:$text-font;
+        font-size: 1.6em;
     }
 
 }

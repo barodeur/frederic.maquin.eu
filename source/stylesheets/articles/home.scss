@@ -38,7 +38,7 @@
     
     blockquote {
         color:#222222;
-        background-color: rgba($logo-background-color, $logo-background-opacity)
+        background-color: rgba($logo-background-color, $logo-background-opacity);
     }
     
     .overall {
@@ -48,7 +48,7 @@
         bottom: 0;
         right: 1%;
     
-        font: 0.7em 'Junction Regular';
+        
         color: #222222;
         text-transform:uppercase;
     
@@ -56,5 +56,20 @@
             color: #222222;
             text-decoration:underline;
         }
+    }
+    
+    .index-title {
+        color:rgb(107, 117, 117);
+    }
+    
+    .greetings-parts, .home-photo-credit {
+        background-color:rgb(245, 245, 242);
+        color: #3c444f;
+
+        @include opacity(0.8);
+    }
+    
+    .home-photo-credit {
+         font-family: 'Open Sans', sans-serif;
     }
 }

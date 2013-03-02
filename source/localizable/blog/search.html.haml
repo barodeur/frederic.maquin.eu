@@ -1,4 +1,36 @@
 ---
-layout: blog_layout
+layout: out_blog_layout
 in_blog: true
+canonic_name: search
 ---
+
+- english_articles = blog.articles.map do |article|
+    - article if article.lang == 'en'
+- puts english_articles.compact
+- english_articles = articles_ordered_by_month(english_articles.compact)
+
+
+- puts english_articles
+
+- french_articles = blog.articles.map do |article|
+    - article if article.lang == 'fr'
+- french_articles = articles_ordered_by_month(french_articles.compact)
+
+%div.all-language-tag-list
+    %section.french-tags
+        %header
+            %h3 French tags
+        %ul.tags-list
+            - blog.fr_tags.each do |tag, articles|
+                %li
+                    = "<a href=\"" + tag_path(tag, 'fr') + "\">" + tag + "</a>"
+                           
+                                    
+    %section.english-tags
+        %header
+            %h3 English tags
+        %ul.tags-list
+            - blog.en_tags.each do |tag, articles|
+                %li
+                    = "<a href=\"" + tag_path(tag, 'en') + "\">" + tag + "</a>"
+

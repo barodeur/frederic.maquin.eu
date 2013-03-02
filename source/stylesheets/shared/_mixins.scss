@@ -79,3 +79,7 @@
 @mixin hidden {
     display:none;
 }
+
+@mixin typo-size($size) {
+    @include modular-scale($size, $font-base, '#{$type-scale-unit-value}', $measure);
+}

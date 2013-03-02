@@ -1,6 +1,9 @@
+$base_responsive_em: 1em;
+
 @media screen and (min-width: (320px/$one_em) + 0em) {
     body {
-        font-size: 1em;
+        font-size: $base_responsive_em;
+        padding-bottom: 5em;
     }
     
     .logo {
@@ -49,15 +52,19 @@
     }
     
     article {
-        font-size:1.2em;
+        font-size:1.3em;
+        line-height: 1.5;
         
         h3 {
-            font-size: 1.4em;
+            font-size: 1.7em;
+            line-height: 1.2;
+            font-weight: normal;
         }
         
         h4 {
-            font-size: 1.3em;
-            font-weight: bold;
+            font-size: 1.7em;
+            line-height: 1.2;
+            font-weight: normal;
             margin-bottom: 0;
         }
         
@@ -107,18 +114,27 @@
     .home-content {
         position:fixed;
         width:100%;
-        margin-top:30%;
+        margin-top:9em;
         
         font-size:1.1em;
+    }
+    
+    .index-title {
+        font-family: "Open Sans";
+        font-size: 2.5em;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top:0;
+        margin-bottom:0.3em;
     }
     
     blockquote {
         position:relative;
         border-radius:0.4em;
         
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Gentium Basic', sans-serif;
         
-        padding:0.2em;
+        padding:0.1em;
         width:90%;
 
         margin-left:auto;
@@ -126,16 +142,17 @@
         
         p {
             padding:0;
-            margin:0 0.5em;
+            margin:0.5em 0.8em;
             text-align:justify;
+            font-size: 1.2em;
         }
         
         &:before {
             content:"\201C";
             font-size: 5em;
             position:absolute;
-            top:-0.2em;
-            font-family: 'Linden Hill Regular', sans-serif;
+            top:-0.26em;
+            font-family: 'Gentium Basic', sans-serif;
             opacity: 0.15;
         }
         
@@ -145,7 +162,7 @@
             position:absolute;
             bottom:-0.45em;
             right:0.05em;
-            font-family: 'Linden Hill Regular', sans-serif;
+            font-family: 'Gentium Basic', sans-serif;
             opacity: 0.15;
         }
     }
@@ -153,12 +170,71 @@
     .blockquote-footer {
         margin-top:0.7em;
         text-align:right;
+        font-size: 1.2em;
+    }
+    
+    .french-articles, .english-articles, .french-tags, .english-tags {
+        header {
+            font-family: "Open Sans";
+            text-transform: uppercase;
+            text-align:center;
+        }
+    }
+    
+    .archive-article-list, .tags-list {
+        
+        font-family: 'Gentium Basic', serif;
+        padding:0;
+        
+        @include columns(0 1);
+
+        li {
+            margin:0;
+            
+            a {
+                padding: 0 0.3em;
+                font-size:1.2em;
+                line-height:1.5;
+            }
+        }
+    }
+    
+    .greetings {
+        font-size: 2.2em;
+    }
+    
+    .greetings-parts {
+        margin-bottom: 0.5em;
+        margin-left:0.1em;
+        margin-right:0.1em;
+        
+        display: block;
+    }
+    
+    .developer {
+        font-size: 0.75em;
+        margin-left:0.3em;
+        margin-right:0.3em;
+    }
+    
+    .job {
+        font-size: 0.55em;
+        margin-left:0.5em;
+        margin-right:0.5em;
+    }
+    
+    .home-photo-credit {
+        font-size: 0.7em;
+        position: absolute;
+        bottom: 0.4em;
+        right: 0.4em;
+        padding: 0.3em;
     }
 }
 
 @media screen and (min-width: (400px/$one_em) + 0em) {
     body {
-        font-size: 1.1em; // (17px)
+        font-size: (1.1 * $base_responsive_em) + 0em; // (17px)
     }
     
     article {
@@ -199,12 +275,30 @@
     }
     
     @include logo-styles-opacity;
+    
+    .greetings {
+        font-family: 'Gentium Basic', serif;
+        font-weight:normal;
+        
+        line-height:1;
+    }
+    
+    .greetings-parts {
+        display: block;
+        text-align:center;
+        background-color:white;
+        color: #3c444f;
+        line-height:1.2;
+        padding: 0 0.3em;
+        
+        @include opacity(0.8);
+    }
 }
 
 @media screen and (min-width: (600px/$one_em) + 0em) {
     
     body {
-        font-size: 1.2em; // (17px)
+        font-size: (1.2 * $base_responsive_em) + 0em; // (17px)
     }
     
     .master {
@@ -239,10 +333,30 @@
     }
     
     article {
-        @include article-childs-width(65%);
+        @include article-childs-width(78%);
         
         .content {
             position:relative;
+        }
+
+        font-size:1.2em;
+        
+        h3 {
+            font-size: 1.5em;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+        
+        h4 {
+            font-size: 1.5em;
+            line-height: 1.2;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        
+        h5 {
+            font-size: 1.0em;
+            margin-bottom: 0;
         }
     }
     
@@ -385,6 +499,13 @@
         top:40%;
     }
     
+    .next-article, .previous-article {
+        font-size: 0.33em;
+        a {
+            font-size:1.5em;
+        }
+    }
+    
     .next-article {
         @include column(2);
         @include push(10);
@@ -399,7 +520,6 @@
     .previous-article {
         @include column(2);
         
-        
         a {
             &:before {
                 content:"A";
@@ -412,69 +532,99 @@
     }
     
     .home-content {
-        margin-top:30%;
+        margin-top:6em;
         font-size:1.2em;
+    }
+    
+    .index-title {
+        font-family: "Open Sans";
+        font-size: 3.5em;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top:0;
     }
     
     blockquote {
         width:80%;
     }
     
-    .next-article, .previous-article {
-        font-size: 0.33em;
-        
-        a {
-            font-size:1.5em;
-        }
-    }
-    
-    .archive-list {
+    .all-language-archive-list, .all-language-tag-list {
         @include container();
     }
     
-    .french-articles {
+    .french-articles, .french-tags {
         @include column(6);
     }
     
-    .english-articles {
+    .english-articles, .english-tags {
         @include column(6);
         @include push(6); 
     }
     
-    .french-articles, .english-articles {
-        header {
-            font-family: "Open Sans";
-            text-transform: uppercase;
-            text-align:center;
-        }
+    .greetings {
+        font-size: 2.0em;
+        font-family: 'Gentium Basic', serif;
+        font-weight:normal;
+        
+        line-height:1;
     }
     
-    .archive-article-list {
-        
-        font-family: "Fanwood Regular";
-        
-        display:table;
-        padding:0;
+    .greetings-parts {
+        display: inline-block;
+        line-height:1.2;
+        padding: 0 0.3em;
+    }
+    
+    .my-name-is {
+        @include push(1)
+    }
+    
+    .developer {
+        font-size: 0.60em;
+        @include push(1);
+        position:relative;
+        top:-0.1em;
+    }
+    
+    .job {
+        font-size: 0.5em;
+        @include push(1)
+    }
+}
 
-        li {
-            display:table-row;
-            
-            span {
-                display:table-cell;
-                padding:0.4em;
-            }
-            
-            a {
-                display:table-cell;
-                padding:0.4em;
-            }
-        }
+@media screen and (min-width: (600px/$one_em) + 0em)
+              and (max-width: (799px/$one_em) + 0em) {
+    
+    .next-article, .previous-article {
+        
+        position:relative;
+        
+      a {
+          font-size: 1.0em;
+          visibility:hidden;
+          &:before {
+              visibility:visible;
+          }
+      }
+    }
+    
+    .next-article {
+        @include column(1);
+        @include push(11);
+        
+        right: 0.7em;
+    }
+    
+    .previous-article {
+        @include column(1);
+        
+        left: 0.7em;
     }
 }
 
 @media screen and (min-width: (800px/$one_em) + 0em) {
     body {
-        font-size: 1.4em; // (17px)
+        font-size: (1.3 * $base_responsive_em) + 0em; // (17px)
     }
     
     .language-chooser {
@@ -488,8 +638,15 @@
     }
     
     .home-content {
-        margin-top:35%;
         font-size:1.2em;
+    }
+    
+    .index-title {
+        font-family: "Open Sans";
+        font-size: 4em;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top:0;
     }
     
     blockquote {
@@ -498,16 +655,49 @@
     
     .next-article, .previous-article {
         font-size: 0.35em;
+        position:relative;
         
         a {
             font-size:1.5em;
         }
     }
+    
+    .next-article {
+        right:-1em;
+    }
+    
+    .previous-article {
+        left:-1em;
+    }
+    
+    article {
+        @include article-childs-width(70%);
+    }
+    
+    .greetings {
+        font-size: 2.5em;
+    }
+    
+    .my-name-is {
+        @include push(1)
+    }
+    
+    .developer {
+        font-size: 0.62em;
+        @include push(2);
+        position:relative;
+        top:-0.1em;
+    }
+    
+    .job {
+        font-size: 0.5em;
+        @include push(3)
+    }
 }
 
 @media screen and (min-width: (1030px/$one_em) + 0em) {
     body {
-        font-size: 1.6em; // (17px)
+        font-size: (1.4 * $base_responsive_em) + 0em; // (17px)
     }
     
     .language-chooser {
@@ -515,7 +705,7 @@
     }
     
     article {
-        @include article-childs-width(55%)
+        @include article-childs-width(56%);
     }
     
     blockquote {
@@ -524,20 +714,58 @@
     
     .next-article, .previous-article {
         font-size: 0.4em;
+        position:static;
         
         a {
             font-size:1.5em;
         }
     }
+    
+    .archive-article-list, .tags-list {
+        @include columns(0em 1);   
+    }
+    
+    .greetings {
+        font-size: 2.5em;
+    }
+    
+    .my-name-is {
+        @include push(1)
+    }
+    
+    .developer {
+        font-size: 0.67em;
+        @include push(3);
+        position:relative;
+        top:0.15em;
+    }
+    
+    .job {
+        font-size: 0.5em;
+        @include push(5)
+    }
+}
+
+@media screen and (min-width: (1300px/$one_em) + 0em) {
+    article {
+        @include article-childs-width(50%);
+        font-size:1.3em;
+    }
+    
+    .greetings {
+        font-size: 3em;
+    }
 }
 
 @media screen and (min-width: (1600px/$one_em) + 0em) {
     body {
-        font-size: 1.6em; // (17px)
+        font-size: (1.5 * $base_responsive_em) + 0em; // (17px)
     }
     
     article {
-        @include article-childs-width(45%);
+        @include article-childs-width(50%);
+        
+        font-size:1.3em;
     }
     
     .article-title-header, .archive-title-header {
@@ -558,6 +786,14 @@
         }
     }
     
+    .archive-article-list, .tags-list {
+        @include columns(0.1em 2);
+    }
+    
+    
+    .greetings {
+        font-size: 3.5em;
+    }
 }
 
 /*@media screen and (min-width: (1200px/$one_em) + 0em) and (min-height: (1500px/$one_em) + 0em) {
