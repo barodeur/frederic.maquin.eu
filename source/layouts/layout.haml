@@ -1,8 +1,10 @@
 !!! 5
-/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
-/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
-/[if IE 8] <html class="no-js lt-ie9">
-<!--[if gt IE 8]> --> <html class="no-js"> <!-- <![endif]-->
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>--> <html class="no-js"> <!-- <![endif]-->
+
 %head
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
@@ -12,14 +14,13 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     
     %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans:400,800', rel: 'stylesheet', type: 'text/css'}
-    %link{href: 'http://fonts.googleapis.com/css?family=Imprima', rel: 'stylesheet', type: 'text/css'}
     %link{href: 'http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic', rel: 'stylesheet', type: 'text/css'}
 
     = stylesheet_link_tag "all"
     = javascript_include_tag  "modernizr"
 
-%body{:class => [page_classes, yield_content(:blog_index_dynamic_title)]}
-    /[if lt IE 7]
+%body{class: [page_classes, yield_content(:blog_index_dynamic_title)]}
+    /[if lt IE 9]
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     
     - if (I18n.t(:lang) == "en")
@@ -28,44 +29,50 @@
     - elsif (I18n.t(:lang) == "fr")
         - language_bullet_default = "bullet-french-default"
         - logo_path = "/fr/"
-    
-    %header.master
-        .logo
-            %a{href: logo_path}
-                %i.logo-background{"data-icon" => "B", "aria-hidden" => "true"}
-                %i.logo-chair{"data-icon" => "M", "aria-hidden" => "true"}
-                %i.logo-fm{"data-icon" => "F", "aria-hidden" => "true"}    
-        %nav.main-nav
-            - if is_blog_article? or data.page.in_blog
-                %ul
-                    %li{class: ("active" if data.page.canonic_name == "archives")}
-                        = localized_link_to 'archives', 'archives'
-                    %li{class: ("active" if data.page.canonic_name == "search")}
-                        = localized_link_to 'search', 'search'
-                    %li{class: ("active" if data.page.canonic_name == "about")}
-                        = localized_link_to 'about_me', 'about'
-            - else
-                %ul              
-                    %li{class: ("active" if data.page.canonic_name == "about")}
-                        = localized_link_to 'about_me', 'about'
-                    %li{class: ("active" if is_blog_article? == "blog")}
-                        = localized_link_to 'blog', 'blog'
-                    %li{class: ("active" if data.page.canonic_name == "projects")}
-                        = localized_link_to 'projects', 'projects'
+    #all
+        %header.master
+            .logo
+                %span.hidden-name
+                    Frédéric Maquin
+                %a{href: logo_path}
+                    %i.logo-background{"aria-hidden" => "true"}
+                    %i.logo-chair{"aria-hidden" => "true"}
+                    %i.logo-fm{"aria-hidden" => "true"}
+            %nav.main-nav
+                - if is_blog_article? or data.page.in_blog
+                    %ul
+                        %li{class: ("active" if data.page.canonic_name == "archives")}
+                            = localized_link_to 'archives', 'archives'
+                        %li{class: ("active" if data.page.canonic_name == "search")}
+                            = localized_link_to 'search', 'search'
+                        %li{class: ("active" if data.page.canonic_name == "about")}
+                            = localized_link_to 'about_me', 'about'
+                - else
+                    %ul              
+                        %li{class: ("active" if data.page.canonic_name == "about")}
+                            = localized_link_to 'about_me', 'about'
+                        %li{class: ("active" if is_blog_article? == "blog")}
+                            -#= localized_link_to 'blog', 'blog'
+                            %a{href: "#", class: "not-yet-available", 'data-tooltip' => I18n.t(:not_yet_available)}
+                                %span.line-through
+                                    blog
+                        %li{class: ("active" if data.page.canonic_name == "projects")}
+                            -#= localized_link_to 'projects', 'projects'
+                            %a{href: "#", class: "not-yet-available", 'data-tooltip' => I18n.t(:not_yet_available)}
+                                %span.line-through
+                                    = I18n.t('projects')
             
-            - data_tooltip = (I18n.t(:one_language_only) if data.page.lang)
+                - data_tooltip = (I18n.t(:one_language_only) if data.page.lang)
             
-            %div.language-chooser{class: "#{data.page.lang}_only"}
-                %span.english
-                    %a.choose-english{href: to_english(request.path), "data-tooltip" => data_tooltip}
-                        English
-                %span.french
-                    %a.choose-french{href: to_french(request.path), "data-tooltip" => data_tooltip}
-                        Français
-                %span.language-bullet{class: language_bullet_default}
-                    &#x25b6;
+                %div.language-chooser{class: "#{data.page.lang}_only  #{language_bullet_default}"}
+                    %span.english
+                        %a.choose-english{href: to_english(request.path), "data-tooltip" => data_tooltip, class: ('current' if I18n.t(:lang) == "en")}
+                            English
+                    %span.french
+                        %a.choose-french{href: to_french(request.path), "data-tooltip" => data_tooltip, class: ('current' if I18n.t(:lang) == "fr")}
+                            Français
 
-    = yield
+        = yield
     
     = javascript_include_tag  "all"
 </html>

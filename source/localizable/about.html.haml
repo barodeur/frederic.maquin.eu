@@ -5,12 +5,35 @@ blog: false
 ---
 
 .about-content
-    .help
+    %article.help
         %h3
-            When I was young,
+            I like when things look clean. Not necessarily beautiful. Just clean.*
         %p
-            Hi, I'm <span>Frederic Maquin</span>, a mobile and front-end developer crafting stuff in Strasbourg, France.
+            I'm <span>Frederic</span>, a mobile and front-end developer crafting stuff in Strasbourg, France.
+        -#%p
+            -#Despite I'm primarily writing my blog entries in English, I might choose to express myself in French once in a while, hence the bilinguale nature of this place.
         %p
-            Despite I'm primarily writing my blog entries in English, I might choose to express myself in French once in a while, hence the bilinguale nature of this place.
-        %p
-            Feel free to contact me or follow me on those social networks!
+            Feel free to get more infos, contact me or follow me on those social networks!
+            
+        %div.social-networks
+            %ul
+                %li.twitter.this-social-network
+                    %a{href: "#"} Twitter
+                %li.google-plus.this-social-network
+                    %a{href: "#"} Google+
+                %li.linked-in.this-social-network
+                    %a{href: "#"} LinkedIn
+                %li.viadeo.this-social-network
+                    %a{href: "#"} Viadeo
+        %hr
+        
+        %footer
+            %p
+                * For instance :
+                %ul
+                    %li
+                        this is ugly, but clean nonetheless;
+                    %li
+                        this is beautiful, but also very dirty (no pun intended);
+                    %li
+                        this is both clean and beautiful.

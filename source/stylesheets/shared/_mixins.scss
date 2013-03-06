@@ -1,5 +1,5 @@
 @mixin article-childs-width ($width, $margin:auto) {
-    p, h1, h2, h3, h4, h5, h6, ul, ol, figure {
+    p, h1, h2, h3, h4, h5, h6, ul, ol, figure, hr {
         width: $width;
         margin-left: $margin;
         margin-right: $margin;
@@ -8,7 +8,7 @@
 
 @mixin basic-opacity-transition {
     @include transition-property(opacity);
-    @include transition-duration(0.3s);
+    @include transition-duration(0.2s);
     @include transition-timing-function(ease-in);
 }
 

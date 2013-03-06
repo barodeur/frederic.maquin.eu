@@ -7,11 +7,8 @@ canonic_name: archives
 
 - english_articles = blog.articles.map do |article|
     - article if article.lang == 'en'
-- puts english_articles.compact
+
 - english_articles = articles_ordered_by_month(english_articles.compact)
-
-
-- puts english_articles
 
 - french_articles = blog.articles.map do |article|
     - article if article.lang == 'fr'

@@ -1,6 +1,6 @@
 
 jQuery ->
-    $('article p, blockquote p').hyphenate('fr')
+    $('article p, blockquote p, article h3').hyphenate('fr')
     
     $(".logo-fm, .logo-chair, .logo-background").hover (->
         console.log('toto')
@@ -19,13 +19,15 @@ jQuery ->
     )
     
     $(".choose-english").hover (->
-        $(".language-bullet").toggleClass "bullet-before-english"
+        $(".language-chooser").toggleClass "bullet-before-english"
     )
     
     $(".choose-french").hover (->
-        $(".language-bullet").toggleClass "bullet-before-french"
+        $(".language-chooser").toggleClass "bullet-before-french"
     )
     
     $('.navigation').waypoint('sticky', {
         offset: '40%'
     })
+    
+    $('.introduction-section').bigtext()

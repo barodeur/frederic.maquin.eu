@@ -33,6 +33,7 @@
             
         h1 {
             font-family: $title-font, sans-serif;
+            font-weight: $title-font-weight;
             text-transform: uppercase;
                 
             color: $title-color;
@@ -51,6 +52,10 @@
             &:hover {
                 color:$main-nav-hover-color;
             }
+            
+            &:before {
+                color: $main-nav-color;
+            }
         }
     }
     
@@ -66,14 +71,11 @@
         }
     }
     
-    .language-bullet {
-        position:absolute;
-            
-        @include transition-property(transform);
-        @include transition-duration(0.3s);
-        @include transition-timing-function(ease-in);
+    .language-chooser {
         
-        color:$main-nav-color;
+        &:before {
+            color:$main-nav-color;
+        }
     }
     
     .bullet-before-french, .bullet-before-english {

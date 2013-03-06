@@ -136,12 +136,7 @@ helpers do
   
   def articles_ordered_by_month(articles)
     
-    puts 1
-    puts articles
-    
     if (articles != nil and articles.last != nil)
-      puts 2
-      puts articles
       
       first_days_of_months_until_now = (articles.last.date.prev_month.to_datetime..Time.zone.now.to_datetime).select {|d| d.day == 1}
     
@@ -183,13 +178,15 @@ activate :directory_indexes
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
   
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
+  
+  activate :minify_html
   
   # Enable cache buster
-  # activate :cache_buster
+  activate :cache_buster
   
   # Use relative URLs
   # activate :relative_assets

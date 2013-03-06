@@ -19,9 +19,11 @@ en:
   # Index
   hi_my_name_is: "Hi! My name is"
   i_am_a_developer: "I'm a <em>mobile</em> & <em>front-end</em> developer"
-  i_am_looking_for: "Oh, and… I'm available for"
+  i_am_looking_for: "oh, and… I'm available for"
   job_proposal_subject: "I'd like to hire you!"
   job: "hire"
+  no_breaking_space: ""
+  not_yet_available: "Soon available!"
   
   paths:
       about: "about"

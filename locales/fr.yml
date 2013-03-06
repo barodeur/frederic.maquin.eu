@@ -18,10 +18,12 @@ fr:
   
   # Index
   hi_my_name_is: "Bonjour&nbsp;! Je m'appelle"
-  i_am_a_developer: "Je suis un développeur <em>mobile</em> & <em>front-end</em>"
-  i_am_looking_for: "Oh, et… Je suis disponible pour"
+  i_am_a_developer: "je suis un développeur <em>mobile</em> & <em>front-end</em>"
+  i_am_looking_for: "oh, et… Je suis disponible pour"
   job_proposal_subject: "J'aimerai t'embaucher !"
-  job: "embauche&nbsp;"
+  job: "embauche"
+  no_breaking_space: "&nbsp;"
+  not_yet_available: "Disponible bientôt !"
   
   paths:
       about: "a-propos"

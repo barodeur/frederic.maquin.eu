@@ -1,12 +1,9 @@
 - wrap_layout :layout do
     
+    - current_article = blog.articles.first if not current_article
+    
     - previous_article_object = previous_article_en(current_article)
     - next_article_object = next_article_en(current_article)
-    
-    - if next_article_object
-        - puts next_article_object.url
-    - if previous_article_object
-        - puts previous_article_object.url
     
     - tags = current_article.tags.map do |tag|
         - "<a href=\"" + tag_path(tag, current_article.lang) + "\">" + tag + "</a>"

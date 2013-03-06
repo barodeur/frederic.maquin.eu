@@ -78,12 +78,8 @@
     }
 
     .help {
-        @include column(8);
-        @include push(2);
-        
         color: $text-color;
         font-family:$text-font;
-        font-size: 1.6em;
     }
 
 }

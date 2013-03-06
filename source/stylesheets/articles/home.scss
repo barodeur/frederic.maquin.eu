@@ -29,11 +29,21 @@
     @include logo-styles;
     @include specific-article-theme-template;
     
-    background: url(/images/snow-chair.jpg) no-repeat center center fixed;
-    @include background-size(cover);
+    #all {
+        min-height:100%;
+        
+        background: url(/images/snow-chair.jpg) no-repeat center center fixed;
+        @include background-size(cover);
+        background-color: $background-color;
+        
+        position:relative;
+    }
     
-/*    .master {
-        height:7em;
+    height:100%;
+    
+/*    body {
+        background-color: transparent;
+        position:relative;
     }*/
     
     blockquote {
@@ -58,18 +68,40 @@
         }
     }
     
-    .index-title {
-        color:rgb(107, 117, 117);
+    .language-chooser {
+        padding: 0.1em 0.2em;
     }
     
-    .greetings-parts, .home-photo-credit {
+    .introduction-section, .home-photo-credit, .language-chooser {
         background-color:rgb(245, 245, 242);
         color: #3c444f;
-
+    }
+    
+    .language-chooser {
+        background-color:rgba(245, 245, 242, 0.8);
+    }
+    
+    .home-photo-credit, .introduction-section {
         @include opacity(0.8);
     }
     
     .home-photo-credit {
          font-family: 'Open Sans', sans-serif;
+    }
+}
+
+@media screen and (max-width: (599px/$one_em) + 0em) {
+    
+    .index,
+    .en_index,
+    .fr_index {
+        
+        .language-chooser {
+            background-color: transparent;
+        }
+        
+        .current {
+            background-color: lighten($main-nav-color, 25%);
+        }
     }
 }

@@ -18,11 +18,11 @@ $one_em: 16px;
 html {
     height: 100%;
     width: 100%;
+    z-index:1;
 }
 
 body {
     min-height:100%;
-    margin-bottom:3em;
 }
 
 .logo-background {
@@ -30,7 +30,6 @@ body {
 }
 
 .logo-chair::before, .logo-fm::before {
-	content: attr(data-icon);
 	font: 5em 'FM Logo Regular';
 	font-weight: normal;
 	font-style: normal;
@@ -39,15 +38,25 @@ body {
     top: 0;
     left: 0;
     display:block;
+    speak:none;
 }
 
 .logo-background::before {
-	content: attr(data-icon);
+	content: "\E001";
 	font: 5em 'FM Logo Regular';
 	font-weight: normal;
 	font-style: normal;
     line-height: 1.1;
     display: block;
+    speak:none;
+}
+
+.logo-chair::before {
+    content: "\E003";
+}
+
+.logo-fm::before {
+    content: "\E002"
 }
     
 .logo {
@@ -55,10 +64,18 @@ body {
         position:relative;
         display: inline-block;
         text-decoration: none;
+        z-index: 2000;
     }
 }
 
 .main-nav {
     font-family:'League Gothic Regular';
     text-transform: uppercase;
+}
+
+.chromeframe {
+    color:#3c444f;
+    text-align:center;
+    font-family: 'Gentium Basic', serif;
+    margin-top:0.7em;
 }

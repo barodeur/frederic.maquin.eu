@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'FM Logo Regular';
-    src: font-url('fm_logo_regular-webfont.eot');
-    src: font-url('fm_logo_regular-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('fm_logo_regular-webfont.woff') format('woff'),
-         font-url('fm_logo_regular-webfont.ttf') format('truetype'),
-         font-url('fm_logo_regular-webfont.svg#fm_logoregular') format('svg');
+    //src: font-url('fm_logo_regular-webfont.eot');
+    src: //font-url('fm_logo_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         //font-url('fm_logo_regular-webfont.woff') format('woff');
+         font-url('fm_logo_regular-webfont.ttf') format('truetype');
+         //font-url('fm_logo_regular-webfont.svg#fm_logoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -20,7 +20,7 @@
     font-style: normal;
 }
 
-@font-face {
+/*@font-face {
     font-family: 'Goudy Bookletter 1911 Regular';
     src: font-url('goudy_bookletter_1911-webfont.eot');
     src: font-url('goudy_bookletter_1911-webfont.eot?#iefix') format('embedded-opentype'),
@@ -40,9 +40,9 @@
          font-url('Junction-webfont.svg#webfont2B4HRL5F') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
-@font-face {
+/*@font-face {
     font-family: 'Gentium Basic', serif;
     src: font-url('fanwood_text-webfont.eot');
     src: font-url('fanwood_text-webfont.eot?#iefix') format('embedded-opentype'),
@@ -62,9 +62,9 @@
          font-url('fanwood_text_italic-webfont.svg#webfont2B4HRL5F') format('svg');
     font-weight: normal;
     font-style: italic;
-}
+}*/
 
-@font-face {
+/*@font-face {
     font-family: 'Linden Hill Regular';
     src: font-url('LindenHill-webfont.eot');
     src: font-url('LindenHill-webfont.eot?#iefix') format('embedded-opentype'),
@@ -84,4 +84,4 @@
          font-url('LindenHill-Italic-webfont.svg#webfont2B4HRL5F') format('svg');
     font-weight: normal;
     font-style: italic;
-}
+}*/

@@ -10,5 +10,9 @@ gem "middleman", "~> 3.0.11"
 
 gem "middleman-blog", "~> 3.1.1", :path => "~/Documents/Development/middleman-blog"
 
+gem "middleman-minify-html"
+
 # For feed.xml.builder
 gem "builder", "~> 3.0.0"
+
+gem "capistrano"

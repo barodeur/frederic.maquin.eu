@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Frédéric Maquin -- Vimophobe -- @fredericmaquin
+
+# THANKS
+
+
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Coffeescript, Sass, Compass
+    jQuery, Modernizr, jQuery.BigText.js, jQuery.Hypher.js, jQuery.Waypoints.js
+    Middleman
